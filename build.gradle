@@ -1,0 +1,96 @@
+plugins {
+    id 'org.jetbrains.kotlin.multiplatform' version '1.4.32'
+    id 'com.android.library'
+    id 'kotlin-android-extensions'
+    id 'maven-publish'
+    id("org.jetbrains.dokka") version "1.4.32"
+}
+
+group = 'nz.ac.aut.sincmotion'
+version = '0.1-SNAPSHOT'
+
+repositories {
+    google()
+    mavenCentral()
+    mavenLocal()
+}
+
+import org.jetbrains.kotlin.gradle.tasks.FatFrameworkTask
+
+kotlin {
+    android {
+        publishAllLibraryVariants()
+    }
+    ios {
+        binaries {
+            framework {
+                baseName = 'SincMotion'
+            }
+        }
+    }
+
+    tasks.register("debugFatFramework", FatFrameworkTask) {
+        baseName = "SincMotion"
+        destinationDir = file("$buildDir/fat-framework/debug")
+        from(
+                targets.iosX64.binaries.getFramework("DEBUG"),
+                targets.iosArm64.binaries.getFramework("DEBUG")
+        )
+    }
+
+    tasks.register("releaseFatFramework", FatFrameworkTask) {
+        baseName = "SincMotion"
+        destinationDir = file("$buildDir/fat-framework/release")
+        from(
+                targets.iosX64.binaries.getFramework("RELEASE"),
+                targets.iosArm64.binaries.getFramework("RELEASE")
+        )
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT"
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation kotlin('test-common')
+                implementation kotlin('test-annotations-common')
+            }
+        }
+        androidMain {
+        }
+        androidTest {
+            dependencies {
+                implementation kotlin('test-junit')
+                implementation 'androidx.test.espresso:espresso-core:3.3.0'
+            }
+        }
+        iosMain {
+
+        }
+        iosTest {
+
+        }
+    }
+}
+
+android {
+    defaultConfig {
+        ndkVersion "21.3.6528147"
+        buildToolsVersion "30.0.0"
+        compileSdkVersion 30
+        targetSdkVersion 30
+        minSdkVersion 16
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets.main.manifest.srcFile('src/androidMain/AndroidManifest.xml')
+}
