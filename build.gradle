@@ -50,7 +50,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation "nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT"
+                implementation 'nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT'
             }
         }
         commonTest {
