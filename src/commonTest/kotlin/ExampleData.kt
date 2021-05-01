@@ -7,6 +7,8 @@ expect class ExampleData() {
 
 fun ExampleData.evaluateAllExamples() {
     exampleNames.forEach {
+        println("Running tests for file: $it")
         SincMotionTests.assert(getExampleByName(it).evaluateOutcomes(testTol))
+        println("All tests passed on file: $it")
     }
 }

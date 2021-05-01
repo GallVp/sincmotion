@@ -12,9 +12,9 @@ internal fun gsi(accelMat: SincMatrix, fs: Double): GsiOutcomes {
     val filteredData = lowPassAt100With3(arz)
     val peakLocations = filteredData.findpeaks()
     val atLoc = peakLocations[2]
-    arx.setWithLV(arx.lessThan(0.0).find(), 0.0)
-    ary.setWithLV(ary.lessThan(0.0).find(), 0.0)
-    arz.setWithLV(arz.lessThan(0.0).find(), 0.0)
+    arx.setWithLV(arx.lessThan(0.0), 0.0)
+    ary.setWithLV(ary.lessThan(0.0), 0.0)
+    arz.setWithLV(arz.lessThan(0.0), 0.0)
     val cStep = ((arx + ary) + arz).sqrt()
     val cStepLocations = cStep.findpeaks()
     val minValues = (cStepLocations - atLoc).abs()

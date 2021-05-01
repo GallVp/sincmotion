@@ -17,10 +17,7 @@ internal fun cgsOutcomes(
     val accelDataRotated = preprocessedData.accelDataRotated
     val gyroDataProcessed = preprocessedData.gyroData
 
-    val gsiOutcomes = gsi(accelDataRotated, fs)
-
-    val gSymIndex = gsiOutcomes.value
-    val tStrideSample = gsiOutcomes.tStride
+    val (gSymIndex, tStrideSample) = gsi(accelDataRotated, fs)
 
     val truncatedAccData = accelDataRotated["$tStrideSample + 1:end, 3"]
     val aVert = truncatedAccData - truncatedAccData.mean().scalar
@@ -33,16 +30,19 @@ internal fun cgsOutcomes(
     val L = personHeight * 0.5
     val fL = personHeight * 0.16
 
-    val footEs = footEvents(aVert, gAP, fs)
-    val ICs = footEs.ICs
-    val isLeftIC = footEs.isLeftIC
+    val (ICs, isLeftIC) = footEvents(aVert, gAP, fs)
 
-    val vMovements = vertMovements(aVert, L, fL, fs, tStrideSample.toInt(), ICs, isLeftIC)
-    val stepLengths = vMovements.stepLengths
-    val leftStepLengths = vMovements.leftStepLengths
-    val rightStepLengths = vMovements.rightStepLengths
+    val (stepLengths, leftStepLengths, rightStepLengths) = vertMovements(
+        aVert,
+        L,
+        fL,
+        fs,
+        tStrideSample.toInt(),
+        ICs,
+        isLeftIC
+    )
 
-    val stepTimes = (ICs).diff() / fs
+    val stepTimes = ICs.diff() / fs
     val leftStepTimes = stepTimes.getWithLV(isLeftIC[2..isLeftIC.numel()])
     val rightStepTimes = stepTimes.getWithLV(!isLeftIC[2..isLeftIC.numel()])
 

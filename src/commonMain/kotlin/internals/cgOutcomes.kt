@@ -18,10 +18,14 @@ internal fun cgOutcomes(
     isAndroid: Boolean
 ): GaitParameters {
 
-    val segments = cgCreateSegments(timeVector, accelData, rotData, gyroData, fs, isAndroid)
-    val accelDataSegments = segments.accelDataSegments
-    val rotDataSegments = segments.rotDataSegments
-    val gyroDataSegments = segments.gyroDataSegments
+    val (accelDataSegments, rotDataSegments, gyroDataSegments) = cgCreateSegments(
+        timeVector,
+        accelData,
+        rotData,
+        gyroData,
+        fs,
+        isAndroid
+    )
 
     val gSymIndex = Double.NaN * SincMatrix.ones(4, 1)
 
@@ -43,7 +47,7 @@ internal fun cgOutcomes(
             isAndroid
         )
     }.forEachIndexed { i, cgsOut ->
-        gSymIndex[i+1] = cgsOut.gSymIndex
+        gSymIndex[i + 1] = cgsOut.gSymIndex
         stepLengths[i] = cgsOut.stepLengths
         leftStepLengths[i] = cgsOut.leftStepLengths
         rightStepLengths[i] = cgsOut.rightStepLengths

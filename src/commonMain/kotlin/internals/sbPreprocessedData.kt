@@ -52,7 +52,7 @@ internal fun sbPreprocessedData(
     // Filter Data
     val fsInt = fs.toInt()
     val fsInt10 = 10 * fsInt
-    val paddedData = accelDataRotated.getRows(fsInt..fsInt10).flip().cat(
+    val paddedData = accelDataRotated.getRows(1..fsInt10).flip().cat(
         1,
         accelDataRotated,
         accelDataRotated.getRows(accelDataRotated.numRows() - fsInt10 + 1..accelDataRotated.numRows()).flip()

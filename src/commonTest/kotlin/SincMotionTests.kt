@@ -21,6 +21,6 @@ class SincMotionTests {
             }
         }
 
-        const val testTol = 1.0E-15
+        const val testTol = 1.0E-12
     }
 }
