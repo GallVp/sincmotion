@@ -1,9 +1,9 @@
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version '1.4.32'
+    id 'org.jetbrains.kotlin.multiplatform' version '1.5.0-RC'
     id 'com.android.library'
     id 'kotlin-android-extensions'
     id 'maven-publish'
-    id("org.jetbrains.dokka") version "1.4.32"
+    id("org.jetbrains.dokka") version "1.4.30"
 }
 
 group = 'nz.ac.aut.sincmotion'
@@ -50,13 +50,14 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation 'nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT'
+                implementation "nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT"
             }
         }
         commonTest {
             dependencies {
                 implementation kotlin('test-common')
                 implementation kotlin('test-annotations-common')
+                implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-RC'
             }
         }
         androidMain {
