@@ -16,6 +16,17 @@ data class GaitParameters(
             "Step length variability: $stepLengthVariability %\n" +
             "Step time variability: $stepTimeVariability %\n" +
             "Step length asymmetry: $stepLengthASymmetry %\n" +
-            "Step time asymmetry: $stepTimeASymmetry %\n'" +
+            "Step time asymmetry: $stepTimeASymmetry %\n" +
             "Step velocity: $meanStepVelocity m/sec"
+
+    val array = doubleArrayOf(
+        meanSymIndex,
+        meanStepLength,
+        meanStepTime,
+        stepLengthVariability,
+        stepTimeVariability,
+        stepLengthASymmetry,
+        stepTimeASymmetry,
+        meanStepVelocity
+    )
 }

@@ -19,12 +19,13 @@ actual class SincMotionProcessor {
                 timeVector.asSincMatrix(false),
                 accelData.asSincMatrix(accelData.size / 3, 3),
                 rotData.asSincMatrix(rotData.size / 4, 4),
-                gyroData.asSincMatrix(rotData.size / 3, 3),
+                gyroData.asSincMatrix(gyroData.size / 3, 3),
                 fs,
                 personHeight,
                 true
             )
         } catch (e: Exception) {
+            if(isDebug){e.printStackTrace()}
             null
         }
     }
@@ -42,6 +43,7 @@ actual class SincMotionProcessor {
                 true
             )
         } catch (e: Exception) {
+            if(isDebug){e.printStackTrace()}
             null
         }
     }

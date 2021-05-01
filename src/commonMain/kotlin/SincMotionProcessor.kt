@@ -1,6 +1,6 @@
 package sincmotion
 
-expect class SincMotionProcessor {
+expect class SincMotionProcessor() {
     /**
      * All input arrays should be in row major format.
      */
@@ -22,3 +22,6 @@ expect class SincMotionProcessor {
         fs: Double,
     ): BalanceParameters?
 }
+
+internal val SincMotionProcessor.isDebug: Boolean
+    get() = false

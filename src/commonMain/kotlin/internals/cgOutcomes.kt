@@ -43,7 +43,7 @@ internal fun cgOutcomes(
             isAndroid
         )
     }.forEachIndexed { i, cgsOut ->
-        gSymIndex[i] = cgsOut.gSymIndex
+        gSymIndex[i+1] = cgsOut.gSymIndex
         stepLengths[i] = cgsOut.stepLengths
         leftStepLengths[i] = cgsOut.leftStepLengths
         rightStepLengths[i] = cgsOut.rightStepLengths
@@ -72,7 +72,7 @@ internal fun cgOutcomes(
         (sqrt((stdStepTimeLeft.pow(2.0) + stdStepTimeRight.pow(2.0)) / 2.0)) / meanStepTime * 100.0
     val stepLengthASymmetry = (meanStepLengthLeft - meanStepLengthRight).absoluteValue / meanStepLength * 100.0
     val stepTimeASymmetry = (meanStepTimeLeft - meanStepTimeRight).absoluteValue / meanStepTime * 100.0
-    val meanStepVelocity = rightStepTimes.asRowVector().elDiv(stepTimes.asRowVector()).median().scalar
+    val meanStepVelocity = stepLengths.asRowVector().elDiv(stepTimes.asRowVector()).median().scalar
 
     return GaitParameters(
         meanSymIndex,
