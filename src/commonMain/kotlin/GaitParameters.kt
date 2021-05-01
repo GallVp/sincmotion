@@ -17,5 +17,5 @@ data class GaitParameters(
             "Step time variability: $stepTimeVariability %\n" +
             "Step length asymmetry: $stepLengthASymmetry %\n" +
             "Step time asymmetry: $stepTimeASymmetry %\n'" +
-            "Step velocity: $meanStepVelocity m/sec\n"
+            "Step velocity: $meanStepVelocity m/sec"
 }

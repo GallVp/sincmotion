@@ -2,6 +2,7 @@ package sincmotion
 
 import sincmaths.asSincMatrix
 import sincmotion.internals.cgOutcomes
+import sincmotion.internals.sbOutcomes
 
 actual class SincMotionProcessor {
 
@@ -17,10 +18,27 @@ actual class SincMotionProcessor {
             cgOutcomes(
                 timeVector.asSincMatrix(false),
                 accelData.asSincMatrix(accelData.size / 3, 3),
-                rotData.asSincMatrix(rotData.size / 3, 3),
-                gyroData.asSincMatrix(rotData.size / 4, 4),
+                rotData.asSincMatrix(rotData.size / 4, 4),
+                gyroData.asSincMatrix(rotData.size / 3, 3),
                 fs,
                 personHeight,
+                false
+            )
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+    actual fun computeBalanceParameters(
+        accelData: DoubleArray,
+        rotData: DoubleArray,
+        fs: Double
+    ): BalanceParameters? {
+        return try {
+            sbOutcomes(
+                accelData.asSincMatrix(accelData.size / 3, 3),
+                rotData.asSincMatrix(rotData.size / 4, 4),
+                fs,
                 false
             )
         } catch (e: Exception) {

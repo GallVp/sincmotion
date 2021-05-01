@@ -12,4 +12,13 @@ expect class SincMotionProcessor {
         fs: Double,
         personHeight: Double,
     ): GaitParameters?
+
+    /**
+     * All input arrays should be in row major format.
+     */
+    fun computeBalanceParameters(
+        accelData: DoubleArray,
+        rotData: DoubleArray,
+        fs: Double,
+    ): BalanceParameters?
 }

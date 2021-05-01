@@ -37,9 +37,6 @@ internal fun footEvents(aVert: SincMatrix, gAP: SincMatrix, fs: Double): FootEve
         }
     }
 
-    val leftICs = ICs.getWithLV(isLeftIC)
-    val rightICs = ICs.getWithLV(!isLeftIC)
-
     return FootEvents(ICs, isLeftIC, FCs)
 }
 
