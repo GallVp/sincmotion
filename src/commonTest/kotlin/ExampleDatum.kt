@@ -18,7 +18,7 @@ data class ExampleDatum(
     val isGaitTask: Boolean,
     val referenceOutcomes: Pair<BalanceParameters?, GaitParameters?>
 ) {
-    fun evaluateOutcomes(testTol: Double) = if (isGaitTask) {
+    fun evaluateOutcomes(testTol: Double, printOutcomes:Boolean = false) = if (isGaitTask) {
         val testOutcomes = SincMotionProcessor().computeGaitParameters(
             timeVector.asRowMajorArray(),
             accelData.asRowMajorArray(),
@@ -27,6 +27,10 @@ data class ExampleDatum(
             fs,
             personHeight
         )
+        if(printOutcomes) {
+            println("Reference outcomes are:\n${referenceOutcomes.second}")
+            println("Test outcomes are:\n$testOutcomes")
+        }
         (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs().lt(testTol).all()
     } else {
         val testOutcomes = SincMotionProcessor().computeBalanceParameters(
@@ -34,6 +38,10 @@ data class ExampleDatum(
             rotData.asRowMajorArray(),
             fs
         )
+        if(printOutcomes) {
+            println("Reference outcomes are:\n${referenceOutcomes.first}")
+            println("Test outcomes are:\n$testOutcomes")
+        }
         (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.first!!.array.asSincMatrix()).abs().lt(testTol).all()
     }
 }
