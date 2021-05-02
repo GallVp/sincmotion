@@ -8,5 +8,6 @@ class SincMotionTests {
     fun runAllTests() {
         ExampleData().evaluateAllExamples(testTol)
         StudyData().validateAllStudies(testTol)
+
     }
 }

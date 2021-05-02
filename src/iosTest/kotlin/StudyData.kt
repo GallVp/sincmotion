@@ -12,24 +12,32 @@ actual class StudyData {
         val filePaths = getStudyFilePaths(forStudy)
         val studyOutcomes = getOutcomeMatrices(forStudy)
 
-        filePaths.map {
-            val (fileName, fileParameters) = extractFileParameters(it)
-            println("Running tests for file: $fileName")
-            val fileMatrix = getFileMatrixByName(forStudy, fileName)
-            val (referenceOutcomes, personHeight) = getReferenceOutcomes(studyOutcomes, fileParameters)
-            val exampleDatum = ExampleDatum(
-                fileMatrix.getCol(1),
-                fileMatrix.getCols(intArrayOf(2, 3, 4)),
-                fileMatrix.getCols(intArrayOf(5, 6, 7)),
-                fileMatrix.getCols(intArrayOf(8, 9, 10, 11)),
-                fs,
-                personHeight,
-                fileParameters.isGaitTask,
-                referenceOutcomes
-            )
-            exampleDatum.evaluateOutcomes(testTol)
-            println("All tests passed on file: $fileName")
+        filePaths.mapIndexed { index: Int, path: String ->
+            println("Index: $index; File: ${path.split("/").last()}")
+            validateStudyFile(forStudy, path, testTol, studyOutcomes)
         }
+    }
+
+    private fun validateStudyFile(
+        forStudy: String,
+        filePath: String,
+        testTol: Double,
+        studyOutcomes: Pair<SincMatrix, SincMatrix>
+    ) {
+        val (fileName, fileParameters) = extractFileParameters(filePath)
+        val fileMatrix = getFileMatrixByName(forStudy, fileName)
+        val (referenceOutcomes, personHeight) = getReferenceOutcomes(studyOutcomes, fileParameters)
+        val exampleDatum = ExampleDatum(
+            fileMatrix.getCol(1),
+            fileMatrix.getCols(intArrayOf(2, 3, 4)),
+            fileMatrix.getCols(intArrayOf(5, 6, 7)),
+            fileMatrix.getCols(intArrayOf(8, 9, 10, 11)),
+            fs,
+            personHeight,
+            fileParameters.isGaitTask,
+            referenceOutcomes
+        )
+        exampleDatum.evaluateOutcomes(testTol)
     }
 
     private fun getFileMatrixByName(studyName: String, fileName: String): SincMatrix {
