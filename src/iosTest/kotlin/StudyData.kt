@@ -118,9 +118,9 @@ actual class StudyData {
         Pair(
             Pair(
                 BalanceParameters(
+                    matrixRow[7],
                     matrixRow[5],
-                    matrixRow[6],
-                    matrixRow[7]
+                    matrixRow[6]
                 ), null
             ), matrixRow[8]
         )

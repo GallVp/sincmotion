@@ -9,5 +9,5 @@ internal fun sbOutcomes(accelData: SincMatrix, rotData: SincMatrix, fs: Double, 
 
     val (maaML, maaAP, maaR) = computeMAA(filteredData)
 
-    return BalanceParameters(-ln(maaML), -ln(maaAP), -ln(maaR))
+    return BalanceParameters(-ln(maaR), -ln(maaML), -ln(maaAP))
 }

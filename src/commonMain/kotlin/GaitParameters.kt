@@ -6,8 +6,8 @@ data class GaitParameters(
     val meanStepTime: Double,
     val stepLengthVariability: Double,
     val stepTimeVariability: Double,
-    val stepLengthASymmetry: Double,
-    val stepTimeASymmetry: Double,
+    val stepLengthAsymmetry: Double,
+    val stepTimeAsymmetry: Double,
     val meanStepVelocity: Double
 ) {
     override fun toString(): String = "Gait symmetry index: $meanSymIndex %\n" +
@@ -15,8 +15,8 @@ data class GaitParameters(
             "Step time: $meanStepTime sec\n" +
             "Step length variability: $stepLengthVariability %\n" +
             "Step time variability: $stepTimeVariability %\n" +
-            "Step length asymmetry: $stepLengthASymmetry %\n" +
-            "Step time asymmetry: $stepTimeASymmetry %\n" +
+            "Step length asymmetry: $stepLengthAsymmetry %\n" +
+            "Step time asymmetry: $stepTimeAsymmetry %\n" +
             "Step velocity: $meanStepVelocity m/sec"
 
     val array = doubleArrayOf(
@@ -25,8 +25,8 @@ data class GaitParameters(
         meanStepTime,
         stepLengthVariability,
         stepTimeVariability,
-        stepLengthASymmetry,
-        stepTimeASymmetry,
+        stepLengthAsymmetry,
+        stepTimeAsymmetry,
         meanStepVelocity
     )
 }

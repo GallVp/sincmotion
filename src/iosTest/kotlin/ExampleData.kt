@@ -26,16 +26,16 @@ actual class ExampleData {
                 meanStepTime = 0.5700000000000000,
                 stepLengthVariability = 2.5090538539828726,
                 stepTimeVariability = 2.6790809783090652,
-                stepLengthASymmetry = 2.4516609807538421,
-                stepTimeASymmetry = 1.7543859649122824,
+                stepLengthAsymmetry = 2.4516609807538421,
+                stepTimeAsymmetry = 1.7543859649122824,
                 meanStepVelocity = 1.1146040171704668
             )
         ),
         Pair(
             BalanceParameters(
+                maaROnNegLog = 3.5146148603432237,
                 maaMLOnNegLog = 4.1171672095899510,
                 maaAPOnNegLog = 4.0994912455579362,
-                maaROnNegLog = 3.5146148603432237,
             ), null
         )
     )
