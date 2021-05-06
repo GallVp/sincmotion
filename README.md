@@ -13,3 +13,4 @@ The library is based on older SincMotion libraries in kotlin/jvm, swift and the 
 + Added normative models.
 + Added study validation.
 + Added random sampling to study validation.
++ Added tests for normative scoring.

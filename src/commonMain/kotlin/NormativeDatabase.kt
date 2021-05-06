@@ -18,7 +18,7 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
      *
      * ComplaintEC = 3
      *
-     * WalkHS = 4
+     * WalkHF = 4
      *
      * WalkHT = 5
      *
@@ -60,7 +60,7 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
     private fun model2Score(
         model: NormativeModel
     ): NormativeScore {
-        val bmi = massInKGs / (heightInCM / 2.0).pow(2)
+        val bmi = massInKGs / (heightInCM / 100.0).pow(2)
 
         val normativeMean = model.intercept +
                 model.ageInYearsBeta * ageInYears +
@@ -71,7 +71,7 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             normativeMean - 1.96 * model.normativeSD,
             normativeMean + 1.96 * model.normativeSD
         )
-        val normativeLowerBound = normativeMean - 1.645 * model.normativeSD
+        val normativeLowerBound = valueToPrecision(normativeMean - 1.645 * model.normativeSD, model.significantDigits)
 
         val semAsString = valueToString(model.sem, model.significantDigits)
         val normativeRangeAsString = listOf(
@@ -82,9 +82,15 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
         return NormativeScore(normativeLowerBound, semAsString, normativeRangeAsString, mdcAsString)
     }
 
-    private fun valueToString(value: Double, digits: Int): String = (
-            round(
-                value * 10.0.pow(digits)
-            ) / 10.0.pow(digits)
-            ).toString()
+    private fun valueToString(value: Double, digits: Int): String = if (digits != 0) {
+        (round(value * 10.0.pow(digits)) / 10.0.pow(digits)).toString()
+    } else {
+        round(value).toInt().toString()
+    }
+
+    private fun valueToPrecision(value: Double, digits: Int): Double = if (digits != 0) {
+        round(value * 10.0.pow(digits)) / 10.0.pow(digits)
+    } else {
+        round(value).toInt().toDouble()
+    }
 }

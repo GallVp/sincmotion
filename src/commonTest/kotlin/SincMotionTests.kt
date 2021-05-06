@@ -8,5 +8,7 @@ class SincMotionTests {
     fun runAllTests() {
         ExampleData().evaluateAllExamples(testTol)
         StudyData().validateAllStudies(testTol, 5)
+
+        NormativeModelTests().evaluateNormativeModels()
     }
 }
