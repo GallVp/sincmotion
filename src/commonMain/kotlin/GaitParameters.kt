@@ -10,6 +10,18 @@ data class GaitParameters(
     val stepTimeAsymmetry: Double,
     val meanStepVelocity: Double
 ) {
+
+    constructor(map: Map<String, Double>) : this(
+        map["sym"] ?: Double.NaN,
+        map["s-len"] ?: Double.NaN,
+        map["s-time"] ?: Double.NaN,
+        map["slv"] ?: Double.NaN,
+        map["stv"] ?: Double.NaN,
+        map["sla"] ?: Double.NaN,
+        map["sta"] ?: Double.NaN,
+        map["s-vel"] ?: Double.NaN,
+    )
+
     override fun toString(): String = "Gait symmetry index: $meanSymIndex %\n" +
             "Step length: $meanStepLength m\n" +
             "Step time: $meanStepTime sec\n" +
@@ -19,7 +31,7 @@ data class GaitParameters(
             "Step time asymmetry: $stepTimeAsymmetry %\n" +
             "Step velocity: $meanStepVelocity m/sec"
 
-    val array = doubleArrayOf(
+    val array = listOf(
         meanSymIndex,
         meanStepLength,
         meanStepTime,
@@ -29,4 +41,10 @@ data class GaitParameters(
         stepTimeAsymmetry,
         meanStepVelocity
     )
+    val keys = listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
+    val map = keys.zip(array).toMap()
+
+    companion object {
+        const val numParameters:Int = 8
+    }
 }

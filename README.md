@@ -16,3 +16,7 @@ The library is based on older SincMotion libraries in kotlin/jvm, swift and the 
 + Added tests for normative scoring.
 + Updated kotlin to 1.5.0.
 + Added cocoapods integration.
++ Added processorVersion = 1.
++ Added maps and keys to parameters.
++ Added numParameters in companion object for parameters.
++ Added Map constructors for parameter classes.

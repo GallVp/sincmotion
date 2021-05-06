@@ -25,3 +25,6 @@ expect class SincMotionProcessor() {
 
 internal val SincMotionProcessor.isDebug: Boolean
     get() = false
+
+val SincMotionProcessor.processorVersion : Int
+    get() = 1
