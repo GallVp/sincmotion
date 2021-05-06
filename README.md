@@ -8,4 +8,8 @@ The library is based on older SincMotion libraries in kotlin/jvm, swift and the 
 
 ## Change Log
 
-### Version 0.1 <27042021>
+### Version 0.1 <06052021>
+
++ Added normative models.
++ Added study validation.
++ Added random sampling to study validation.

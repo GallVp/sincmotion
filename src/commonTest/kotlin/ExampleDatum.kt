@@ -6,7 +6,6 @@ import sincmaths.sincmatrix.minus
 import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 import sincmotion.SincMotionProcessor
-import kotlin.math.exp
 
 data class ExampleDatum(
     val timeVector: SincMatrix,

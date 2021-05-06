@@ -8,12 +8,20 @@ actual class StudyData {
     actual val studyNames = listOf("SAVS")
     private val fs: Double = 100.0
 
-    actual fun validateStudyData(forStudy: String, testTol: Double) {
+    actual fun validateStudyData(forStudy: String, testTol: Double, sampleSize: Int) {
         val filePaths = getStudyFilePaths(forStudy)
         val studyOutcomes = getOutcomeMatrices(forStudy)
 
-        filePaths.mapIndexed { index: Int, path: String ->
-            println("Index: $index; File: ${path.split("/").last()}")
+        val sample: List<Int>
+        val selectedFilePaths = if (sampleSize != 0) {
+            sample = (filePaths.indices).shuffled().take(sampleSize)
+            filePaths.slice(sample)
+        } else {
+            sample = filePaths.indices.toList()
+            filePaths
+        }
+        selectedFilePaths.mapIndexed { index: Int, path: String ->
+            println("Index: ${sample[index]}; File: ${path.split("/").last()}")
             validateStudyFile(forStudy, path, testTol, studyOutcomes)
         }
     }
