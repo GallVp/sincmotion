@@ -51,9 +51,44 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
      */
     fun getNormativeScore(taskQualifier: Int, outcome: Int): NormativeScore = database[taskQualifier][outcome]
 
-    private val database = NormativeModels.modelList.map { taskQualifiers ->
-        taskQualifiers.map { model ->
-            model2Score(model)
+    fun makePresentable(taskQualifier: Int, parameters: GaitParameters) : GaitParameters {
+        val digits = significantDigits[taskQualifier]
+        return GaitParameters(GaitParameters.keys.zip(parameters.array.mapIndexed { index, d ->
+            valueToPrecision(d, digits[index])
+        }).toMap())
+    }
+
+    fun makePresentable(taskQualifier: Int, parameters: BalanceParameters) : BalanceParameters {
+        val digits = significantDigits[taskQualifier]
+        return BalanceParameters(BalanceParameters.keys.zip(parameters.array.mapIndexed { index, d ->
+            valueToPrecision(d, digits[index])
+        }).toMap())
+    }
+
+    fun makePresentable(taskQualifier: Int, key: String, value: Double) : Double {
+        val digits = significantDigits[taskQualifier]
+        val keyIndex = if(taskQualifier >=4) {
+            GaitParameters.keys.indexOf(key)
+        } else {
+            BalanceParameters.keys.indexOf(key)
+        }
+
+        return valueToPrecision(value, digits[keyIndex])
+    }
+
+    private val database by lazy {
+        NormativeModels.modelList.map { taskQualifiers ->
+            taskQualifiers.map { model ->
+                model2Score(model)
+            }
+        }
+    }
+
+    private val significantDigits by lazy {
+        NormativeModels.modelList.map { taskQualifiers ->
+            taskQualifiers.map { model ->
+                model.significantDigits
+            }
         }
     }
 

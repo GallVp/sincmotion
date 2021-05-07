@@ -22,3 +22,5 @@ The library is based on older SincMotion libraries in kotlin/jvm, swift and the 
 + Added Map constructors for parameter classes.
 + Added names and units to parameters.
 + Added `defaultParameterKey` to parameter classes.
++ Added `makePresentable` to `NormativeDatabase`.
++ Made `database` property of `NormativeDatabase` lazy.

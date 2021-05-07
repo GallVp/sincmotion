@@ -4,32 +4,34 @@ internal object NormativeModels {
     /**
      * List order: Task:Qualifier x Parameter
      */
-    val modelList = listOf(
-        listOf(FirmEOMAAR, FirmEOMAAML, FirmEOMAAAP),
-        listOf(FirmECMAAR, FirmECMAAML, FirmECMAAAP),
-        listOf(CompliantEOMAAR, CompliantEOMAAML, CompliantEOMAAAP),
-        listOf(CompliantECMAAR, CompliantECMAAML, CompliantECMAAAP),
+    val modelList by lazy {
         listOf(
-            WalkHFGaitSymmetry,
-            WalkHFStepLength,
-            WalkHFStepTime,
-            WalkHFStepLengthVar,
-            WalkHFStepTimeVar,
-            WalkHFStepLengthAsym,
-            WalkHFStepTimeAsym,
-            WalkHFStepVelocity
-        ),
-        listOf(
-            WalkHTGaitSymmetry,
-            WalkHTStepLength,
-            WalkHTStepTime,
-            WalkHTStepLengthVar,
-            WalkHTStepTimeVar,
-            WalkHTStepLengthAsym,
-            WalkHTStepTimeAsym,
-            WalkHTStepVelocity
+            listOf(FirmEOMAAR, FirmEOMAAML, FirmEOMAAAP),
+            listOf(FirmECMAAR, FirmECMAAML, FirmECMAAAP),
+            listOf(CompliantEOMAAR, CompliantEOMAAML, CompliantEOMAAAP),
+            listOf(CompliantECMAAR, CompliantECMAAML, CompliantECMAAAP),
+            listOf(
+                WalkHFGaitSymmetry,
+                WalkHFStepLength,
+                WalkHFStepTime,
+                WalkHFStepLengthVar,
+                WalkHFStepTimeVar,
+                WalkHFStepLengthAsym,
+                WalkHFStepTimeAsym,
+                WalkHFStepVelocity
+            ),
+            listOf(
+                WalkHTGaitSymmetry,
+                WalkHTStepLength,
+                WalkHTStepTime,
+                WalkHTStepLengthVar,
+                WalkHTStepTimeVar,
+                WalkHTStepLengthAsym,
+                WalkHTStepTimeAsym,
+                WalkHTStepVelocity
+            )
         )
-    )
+    }
 }
 
 internal object FirmEOMAAR : NormativeModel {
