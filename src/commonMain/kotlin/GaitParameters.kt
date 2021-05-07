@@ -41,10 +41,46 @@ data class GaitParameters(
         stepTimeAsymmetry,
         meanStepVelocity
     )
-    val keys = listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
     val map = keys.zip(array).toMap()
 
     companion object {
-        const val numParameters:Int = 8
+        const val numParameters: Int = 8
+        private val keys = listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
+        val units = keys.zip(
+            listOf(
+                "%",
+                "m",
+                "sec",
+                "%",
+                "%",
+                "%",
+                "%",
+                "m/sec"
+            )
+        ).toMap()
+        val names = keys.zip(
+            listOf(
+                "Symmetry index",
+                "Step length",
+                "Step time",
+                "Step length variability",
+                "Step time variability",
+                "Step length asymmetry",
+                "Step time asymmetry",
+                "Step velocity"
+            )
+        ).toMap()
+        val namesWithUnits = keys.zip(
+            listOf(
+                "Symmetry index (%)",
+                "Step length (m)",
+                "Step time (sec)",
+                "Step length variability (%)",
+                "Step time variability (%)",
+                "Step length asymmetry (%)",
+                "Step time asymmetry (%)",
+                "Step velocity (m/sec)"
+            )
+        ).toMap()
     }
 }
