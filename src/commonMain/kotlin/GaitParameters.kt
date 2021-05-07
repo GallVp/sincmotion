@@ -24,12 +24,12 @@ data class GaitParameters(
 
     override fun toString(): String = "Gait symmetry index: $meanSymIndex %\n" +
             "Step length: $meanStepLength m\n" +
-            "Step time: $meanStepTime sec\n" +
+            "Step time: $meanStepTime s\n" +
             "Step length variability: $stepLengthVariability %\n" +
             "Step time variability: $stepTimeVariability %\n" +
             "Step length asymmetry: $stepLengthAsymmetry %\n" +
             "Step time asymmetry: $stepTimeAsymmetry %\n" +
-            "Step velocity: $meanStepVelocity m/sec"
+            "Step velocity: $meanStepVelocity m/s"
 
     val array = listOf(
         meanSymIndex,
@@ -52,12 +52,12 @@ data class GaitParameters(
             listOf(
                 "%",
                 "m",
-                "sec",
+                "s",
                 "%",
                 "%",
                 "%",
                 "%",
-                "m/sec"
+                "m/s"
             )
         ).toMap()
         val names = keys.zip(
@@ -76,12 +76,12 @@ data class GaitParameters(
             listOf(
                 "Symmetry index (%)",
                 "Step length (m)",
-                "Step time (sec)",
+                "Step time (s)",
                 "Step length variability (%)",
                 "Step time variability (%)",
                 "Step length asymmetry (%)",
                 "Step time asymmetry (%)",
-                "Step velocity (m/sec)"
+                "Step velocity (m/s)"
             )
         ).toMap()
     }

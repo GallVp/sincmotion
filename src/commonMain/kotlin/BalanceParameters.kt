@@ -8,9 +8,9 @@ data class BalanceParameters(val maaROnNegLog: Double, val maaMLOnNegLog: Double
         map["maa-ap"] ?: Double.NaN
     )
 
-    override fun toString(): String = "MAA R: $maaROnNegLog -ln[m/sec/sec]\n" +
-            "MAA ML: $maaMLOnNegLog -ln[m/sec/sec]\n" +
-            "MAA AP: $maaAPOnNegLog -ln[m/sec/sec]"
+    override fun toString(): String = "MAA R: $maaROnNegLog -ln[m/s/s]\n" +
+            "MAA ML: $maaMLOnNegLog -ln[m/s/s]\n" +
+            "MAA AP: $maaAPOnNegLog -ln[m/s/s]"
 
     val array = listOf(maaROnNegLog, maaMLOnNegLog, maaAPOnNegLog)
     val map = keys.zip(array).toMap()
@@ -22,9 +22,9 @@ data class BalanceParameters(val maaROnNegLog: Double, val maaMLOnNegLog: Double
         val keys = listOf("maa-r", "maa-ml", "maa-ap")
         val units = keys.zip(
             listOf(
-                "-ln[m/sec/sec]",
-                "-ln[m/sec/sec]",
-                "-ln[m/sec/sec]"
+                "-ln[m/s²]",
+                "-ln[m/s²]",
+                "-ln[m/s²]"
             )
         ).toMap()
         val names = keys.zip(
@@ -36,9 +36,9 @@ data class BalanceParameters(val maaROnNegLog: Double, val maaMLOnNegLog: Double
         ).toMap()
         val namesWithUnits = keys.zip(
             listOf(
-                "Steadiness (-ln[m/sec/sec])",
-                "Steadiness ML (-ln[m/sec/sec])",
-                "Steadiness AP (-ln[m/sec/sec])"
+                "Steadiness (-ln[m/s²])",
+                "Steadiness ML (-ln[m/s²])",
+                "Steadiness AP (-ln[m/s²])"
             )
         ).toMap()
     }
