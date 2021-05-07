@@ -21,3 +21,4 @@ The library is based on older SincMotion libraries in kotlin/jvm, swift and the 
 + Added numParameters in companion object for parameters.
 + Added Map constructors for parameter classes.
 + Added names and units to parameters.
++ Added `defaultParameterKey` to parameter classes.

@@ -17,6 +17,7 @@ data class BalanceParameters(val maaROnNegLog: Double, val maaMLOnNegLog: Double
 
     companion object {
         const val numParameters: Int = 3
+        const val defaultParameterKey = "maa-r"
         private val keys = listOf("maa-r", "maa-ml", "maa-ap")
         val units = keys.zip(
             listOf(
