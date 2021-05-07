@@ -46,7 +46,8 @@ data class GaitParameters(
     companion object {
         const val numParameters: Int = 8
         const val defaultParameterKey = "sym"
-        private val keys = listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
+        const val defaultParameterIndex = 0
+        val keys = listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
         val units = keys.zip(
             listOf(
                 "%",
