@@ -52,6 +52,8 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
     fun getNormativeScore(taskQualifier: Int, outcome: Int): NormativeScore = database[taskQualifier][outcome]
     fun getNormativeScores(taskQualifier: Int): List<NormativeScore> = database[taskQualifier]
 
+    fun getSignificantDigits(taskQualifier: Int, outcome: Int): Int = significantDigits[taskQualifier][outcome]
+
     fun makePresentable(taskQualifier: Int, gaitParameters: GaitParameters): Map<String, String> {
         val digits = significantDigits[taskQualifier]
         return GaitParameters.keys.zip(gaitParameters.array.mapIndexed { index, d ->
