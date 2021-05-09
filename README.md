@@ -2,8 +2,7 @@
 
 ## Reference Implementation
 
-MATLAB Reference Implementation version: MATLAB: [4c9f7b7
-](https://github.com/GallVp/innerEarMatlab/commit/4c9f7b7eabdbd690b946e1ec6294a4ac8b3bdcb3)
+MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/innerEarMatlab/commit/b855a2687972a6dceb768848287e10054ec1ff74), Test Tol. = 1e-10 
 
 ## Change Log
 
@@ -13,16 +12,12 @@ MATLAB Reference Implementation version: MATLAB: [4c9f7b7
 + Added study validation.
 + Added random sampling to study validation.
 + Added tests for normative scoring.
-+ Updated kotlin to 1.5.0.
 + Added Cocoapods integration.
 + Added processorVersion = 1.
 + Added maps and keys to parameters.
-+ Added numParameters in companion object for parameters.
-+ Added Map constructors for parameter classes.
-+ Added names and units to parameters.
-+ Added `defaultParameterKey` to parameter classes.
 + Added `makePresentable` to `NormativeDatabase`.
 + Made `database` property of `NormativeDatabase` lazy.
++ Added the improved version of `gsi` algo from MATLAB.
 
 ## History
 

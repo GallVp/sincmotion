@@ -1,5 +1,3 @@
-import kotlin.test.assertTrue
-
 expect class ExampleData() {
     val exampleNames: List<String>
     fun getExampleByName(name: String): ExampleDatum
@@ -8,7 +6,7 @@ expect class ExampleData() {
 fun ExampleData.evaluateAllExamples(testTol: Double) {
     exampleNames.forEach {
         println("Running tests for file: $it")
-        assertTrue(getExampleByName(it).evaluateOutcomes(testTol))
+        getExampleByName(it).evaluateOutcomes(testTol)
         println("All tests passed on file: $it")
     }
 }

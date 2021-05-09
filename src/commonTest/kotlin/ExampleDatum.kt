@@ -6,6 +6,7 @@ import sincmaths.sincmatrix.minus
 import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 import sincmotion.SincMotionProcessor
+import kotlin.test.assertTrue
 
 data class ExampleDatum(
     val timeVector: SincMatrix,
@@ -17,7 +18,7 @@ data class ExampleDatum(
     val isGaitTask: Boolean,
     val referenceOutcomes: Pair<BalanceParameters?, GaitParameters?>
 ) {
-    fun evaluateOutcomes(testTol: Double, printOutcomes:Boolean = false) = if (isGaitTask) {
+    fun evaluateOutcomes(testTol: Double, printOutcomes: Boolean = false) = if (isGaitTask) {
         val testOutcomes = SincMotionProcessor().computeGaitParameters(
             timeVector.asRowMajorArray(),
             accelData.asRowMajorArray(),
@@ -26,21 +27,27 @@ data class ExampleDatum(
             fs,
             personHeight
         )
-        if(printOutcomes) {
+        val outcomeDifferences =
+            (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs()
+        if (printOutcomes) {
             println("Reference outcomes are:\n${referenceOutcomes.second}")
             println("Test outcomes are:\n$testOutcomes")
+            println("Differences are: $outcomeDifferences")
         }
-        (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs().lt(testTol).all()
+        assertTrue(outcomeDifferences.lt(testTol).all())
     } else {
         val testOutcomes = SincMotionProcessor().computeBalanceParameters(
             accelData.asRowMajorArray(),
             rotData.asRowMajorArray(),
             fs
         )
-        if(printOutcomes) {
+        val outcomeDifferences =
+            (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.first!!.array.asSincMatrix()).abs()
+        if (printOutcomes) {
             println("Reference outcomes are:\n${referenceOutcomes.first}")
             println("Test outcomes are:\n$testOutcomes")
+            println("Differences are: $outcomeDifferences")
         }
-        (testOutcomes!!.array.asSincMatrix() - referenceOutcomes.first!!.array.asSincMatrix()).abs().lt(testTol).all()
+        assertTrue(outcomeDifferences.lt(testTol).all())
     }
 }

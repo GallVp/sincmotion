@@ -19,7 +19,7 @@ data class StudyFileParameters(val partID: String, val testNum: Int, val testTyp
             2
         }
     } else {
-        if (testQualifier == "Firm") {
+        if (testQualifier == "EO") {
             1
         } else {
             2

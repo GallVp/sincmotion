@@ -2,7 +2,7 @@ import kotlin.test.Test
 
 class SincMotionTests {
 
-    private val testTol = 1.0E-12
+    private val testTol = 1.0E-10
 
     @Test
     fun runAllTests() {

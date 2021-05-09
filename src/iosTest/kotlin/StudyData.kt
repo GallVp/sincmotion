@@ -8,6 +8,13 @@ actual class StudyData {
     actual val studyNames = listOf("SAVS")
     private val fs: Double = 100.0
 
+    actual fun validateStudyFile(forStudy: String, fileName: String, testTol: Double) {
+        val filePath = "$forStudy/$fileName"
+        val studyOutcomes = getOutcomeMatrices(forStudy)
+
+        validateStudyFile(forStudy, filePath, testTol, studyOutcomes)
+    }
+
     actual fun validateStudyData(forStudy: String, testTol: Double, sampleSize: Int) {
         val filePaths = getStudyFilePaths(forStudy)
         val studyOutcomes = getOutcomeMatrices(forStudy)

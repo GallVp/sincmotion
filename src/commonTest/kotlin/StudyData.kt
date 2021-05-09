@@ -1,6 +1,7 @@
 expect class StudyData() {
     val studyNames: List<String>
     fun validateStudyData(forStudy: String, testTol: Double, sampleSize: Int = 0)
+    fun validateStudyFile(forStudy: String, fileName:String, testTol: Double)
 }
 
 /**

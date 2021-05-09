@@ -4,4 +4,7 @@ actual class StudyData {
 
     actual fun validateStudyData(forStudy: String, testTol:Double, sampleSize:Int) {
     }
+
+    actual fun validateStudyFile(forStudy: String, fileName: String, testTol: Double) {
+    }
 }
