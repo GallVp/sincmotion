@@ -105,19 +105,31 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
                 model.bmiBeta * bmi +
                 model.heightInCMBeta * heightInCM
 
-        val normativeRange = doubleArrayOf(
-            normativeMean - 1.96 * model.normativeSD,
-            normativeMean + 1.96 * model.normativeSD
+        val normativeRange = listOf(
+            valueToPrecision(normativeMean - 1.96 * model.normativeSD, model.significantDigits),
+            valueToPrecision(normativeMean + 1.96 * model.normativeSD, model.significantDigits)
         )
         val normativeLowerBound = valueToPrecision(normativeMean - 1.645 * model.normativeSD, model.significantDigits)
+        val normativeLowerBoundAsString = valueToString(normativeLowerBound, model.significantDigits)
 
+        val semWithPrecision = valueToPrecision(model.sem, model.significantDigits)
         val semAsString = valueToString(model.sem, model.significantDigits)
         val normativeRangeAsString = listOf(
             valueToString(normativeRange[0], model.significantDigits),
             valueToString(normativeRange[1], model.significantDigits)
         )
+        val mdcWithPrecision = valueToPrecision(model.mdc, model.significantDigits)
         val mdcAsString = valueToString(model.mdc, model.significantDigits)
-        return NormativeScore(normativeLowerBound, semAsString, normativeRangeAsString, mdcAsString)
+        return NormativeScore(
+            normativeLowerBound,
+            normativeLowerBoundAsString,
+            semWithPrecision,
+            semAsString,
+            normativeRange,
+            normativeRangeAsString,
+            mdcWithPrecision,
+            mdcAsString
+        )
     }
 
     private fun valueToString(value: Double, digits: Int): String = if (digits != 0) {
