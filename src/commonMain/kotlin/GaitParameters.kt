@@ -22,7 +22,7 @@ data class GaitParameters(
         map["s-vel"] ?: Double.NaN,
     )
 
-    override fun toString(): String = "Gait symmetry index: $meanSymIndex %\n" +
+    override fun toString(): String = "Periodicity index: $meanSymIndex %\n" +
             "Step length: $meanStepLength m\n" +
             "Step time: $meanStepTime s\n" +
             "Step length variability: $stepLengthVariability %\n" +
@@ -71,7 +71,7 @@ data class GaitParameters(
         val names by lazy {
             keys.zip(
                 listOf(
-                    "Symmetry index",
+                    "Periodicity index",
                     "Step length",
                     "Step time",
                     "Step length variability",
@@ -85,7 +85,7 @@ data class GaitParameters(
         val namesWithUnits by lazy {
             keys.zip(
                 listOf(
-                    "Symmetry index (%)",
+                    "Periodicity index (%)",
                     "Step length (m)",
                     "Step time (s)",
                     "Step length variability (%)",

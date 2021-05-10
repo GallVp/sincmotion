@@ -33,7 +33,7 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
      *
      * Table (Outcome = Int);Walk
      *
-     * SymIndex = 0
+     * PeriodicityIndex = 0
      *
      * StepLength = 1
      *
