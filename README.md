@@ -6,7 +6,7 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 
 ## Change Log
 
-### Version 0.1 <08052021>
+### Version 0.1 <12052021>
 
 + Added normative models.
 + Added study validation.
@@ -15,8 +15,6 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 + Added Cocoapods integration.
 + Added processorVersion = 1.
 + Added maps and keys to parameters.
-+ Added `makePresentable` to `NormativeDatabase`.
-+ Made `database` property of `NormativeDatabase` lazy.
 + Added the improved version of `gsi` algo from MATLAB.
 
 ## History
