@@ -25,6 +25,9 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
     fun getNormativeScore(taskQualifier: Int, outcomeKey: String): ReportableNormativeScore? =
         database[taskQualifier][outcomeKey]
 
+    fun getSignificantDigits(taskQualifier: Int, outcomeKey: String): Int? =
+        significantDigits[taskQualifier][outcomeKey]
+
     /**
      * Returns string and double with precision.
      */
