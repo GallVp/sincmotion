@@ -25,6 +25,14 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
     fun getNormativeScore(taskQualifier: Int, outcomeKey: String): ReportableNormativeScore? =
         database[taskQualifier][outcomeKey]
 
+    /**
+     * Returns string and double with precision.
+     */
+    fun makePresentable(taskQualifier: Int, key: String, value: Double): Pair<String, Double> {
+        val digits = significantDigits[taskQualifier][key]!!
+        return Pair(valueToString(value, digits), valueToPrecision(value, digits))
+    }
+
     fun makeReportableParameters(taskQualifier: Int, gaitParameters: GaitParameters): Map<String, ReportableParameter> {
         val digits = significantDigits[taskQualifier]
         val normativeScores = database[taskQualifier]
