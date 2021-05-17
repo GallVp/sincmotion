@@ -54,6 +54,20 @@ data class GaitParameters(
         val keys by lazy {
             listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
         }
+        val isLowerBoundedOnly by lazy {
+            keys.zip(
+                listOf(
+                    true,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                )
+            ).toMap()
+        }
         val units by lazy {
             keys.zip(
                 listOf(

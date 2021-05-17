@@ -6,7 +6,7 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 
 ## Change Log
 
-### Version 0.1 <12052021>
+### Version 0.1 <17052021>
 
 + Added normative models.
 + Added study validation.

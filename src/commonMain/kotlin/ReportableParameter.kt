@@ -6,5 +6,5 @@ data class ReportableParameter(
     val reportableSEM: String,
     val reportableRange: String,
     val reportableUnits: String,
-    val isHighlighted: Boolean
+    val isRangeHighlighted: Boolean
 )

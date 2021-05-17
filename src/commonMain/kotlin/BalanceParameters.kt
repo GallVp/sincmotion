@@ -24,6 +24,15 @@ data class BalanceParameters(val maaROnNegLog: Double, val maaMLOnNegLog: Double
         const val defaultParameterKey = "maa-r"
         const val defaultParameterIndex = 0
         val keys = listOf("maa-r", "maa-ml", "maa-ap")
+        val isLowerBoundedOnly by lazy {
+            keys.zip(
+                listOf(
+                    true,
+                    true,
+                    true
+                )
+            ).toMap()
+        }
         val units by lazy {
             keys.zip(
                 listOf(

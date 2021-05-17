@@ -1,35 +1,42 @@
 package sincmotion.internals
 
+import sincmotion.BalanceParameters
+import sincmotion.GaitParameters
+
 internal object NormativeModels {
     /**
      * List order: Task:Qualifier x Parameter
      */
     val modelList by lazy {
         listOf(
-            listOf(FirmEOMAAR, FirmEOMAAML, FirmEOMAAAP),
-            listOf(FirmECMAAR, FirmECMAAML, FirmECMAAAP),
-            listOf(CompliantEOMAAR, CompliantEOMAAML, CompliantEOMAAAP),
-            listOf(CompliantECMAAR, CompliantECMAAML, CompliantECMAAAP),
-            listOf(
-                WalkHFGaitSymmetry,
-                WalkHFStepLength,
-                WalkHFStepTime,
-                WalkHFStepLengthVar,
-                WalkHFStepTimeVar,
-                WalkHFStepLengthAsym,
-                WalkHFStepTimeAsym,
-                WalkHFStepVelocity
-            ),
-            listOf(
-                WalkHTGaitSymmetry,
-                WalkHTStepLength,
-                WalkHTStepTime,
-                WalkHTStepLengthVar,
-                WalkHTStepTimeVar,
-                WalkHTStepLengthAsym,
-                WalkHTStepTimeAsym,
-                WalkHTStepVelocity
-            )
+            BalanceParameters.keys.zip(listOf(FirmEOMAAR, FirmEOMAAML, FirmEOMAAAP)).toMap(),
+            BalanceParameters.keys.zip(listOf(FirmECMAAR, FirmECMAAML, FirmECMAAAP)).toMap(),
+            BalanceParameters.keys.zip(listOf(CompliantEOMAAR, CompliantEOMAAML, CompliantEOMAAAP)).toMap(),
+            BalanceParameters.keys.zip(listOf(CompliantECMAAR, CompliantECMAAML, CompliantECMAAAP)).toMap(),
+            GaitParameters.keys.zip(
+                listOf(
+                    WalkHFGaitSymmetry,
+                    WalkHFStepLength,
+                    WalkHFStepTime,
+                    WalkHFStepLengthVar,
+                    WalkHFStepTimeVar,
+                    WalkHFStepLengthAsym,
+                    WalkHFStepTimeAsym,
+                    WalkHFStepVelocity
+                )
+            ).toMap(),
+            GaitParameters.keys.zip(
+                listOf(
+                    WalkHTGaitSymmetry,
+                    WalkHTStepLength,
+                    WalkHTStepTime,
+                    WalkHTStepLengthVar,
+                    WalkHTStepTimeVar,
+                    WalkHTStepLengthAsym,
+                    WalkHTStepTimeAsym,
+                    WalkHTStepVelocity
+                )
+            ).toMap()
         )
     }
 }

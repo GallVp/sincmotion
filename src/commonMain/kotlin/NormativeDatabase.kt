@@ -21,95 +21,46 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
      * WalkHF = 4
      *
      * WalkHT = 5
-     *
-     *
-     * Table (Outcome = Int)
-     *
-     * MAA_R = 0
-     *
-     * MAA_ML = 1
-     *
-     * MAA_AP = 2
-     *
-     * Table (Outcome = Int);Walk
-     *
-     * PeriodicityIndex = 0
-     *
-     * StepLength = 1
-     *
-     * StepTime = 2
-     *
-     * StepLengthVariability = 3
-     *
-     * StepTimeVariability = 4
-     *
-     * StepLengthAsymmetry = 5
-     *
-     * StepTimeAsymmetry = 6
-     *
-     * StepVelocity = 7
      */
-    fun getNormativeScore(taskQualifier: Int, outcome: Int): NormativeScore = database[taskQualifier][outcome]
-    fun getNormativeScores(taskQualifier: Int): List<NormativeScore> = database[taskQualifier]
-
-    fun getSignificantDigits(taskQualifier: Int, outcome: Int): Int = significantDigits[taskQualifier][outcome]
-
-    fun makePresentable(taskQualifier: Int, gaitParameters: GaitParameters): Map<String, Pair<String, Double>> {
-        val digits = significantDigits[taskQualifier]
-        return GaitParameters.keys.zip(gaitParameters.array.mapIndexed { index, d ->
-            Pair(valueToString(d, digits[index]), valueToPrecision(d, digits[index]))
-        }).toMap()
-    }
-
-    fun makePresentable(taskQualifier: Int, balanceParameters: BalanceParameters): Map<String, Pair<String, Double>> {
-        val digits = significantDigits[taskQualifier]
-        return BalanceParameters.keys.zip(balanceParameters.array.mapIndexed { index, d ->
-            Pair(valueToString(d, digits[index]), valueToPrecision(d, digits[index]))
-        }).toMap()
-    }
-
-    fun makePresentable(taskQualifier: Int, key: String, value: Double): Pair<String, Double> {
-        val digits = significantDigits[taskQualifier]
-        val keyIndex = if (taskQualifier >= 4) {
-            GaitParameters.keys.indexOf(key)
-        } else {
-            BalanceParameters.keys.indexOf(key)
-        }
-
-        return Pair(valueToString(value, digits[keyIndex]), valueToPrecision(value, digits[keyIndex]))
-    }
+    fun getNormativeScore(taskQualifier: Int, outcomeKey: String): ReportableNormativeScore? =
+        database[taskQualifier][outcomeKey]
 
     fun makeReportableParameters(taskQualifier: Int, gaitParameters: GaitParameters): Map<String, ReportableParameter> {
         val digits = significantDigits[taskQualifier]
         val normativeScores = database[taskQualifier]
-        return GaitParameters.keys.zip(gaitParameters.array.mapIndexed { index, d ->
-            val reportableName = GaitParameters.names[GaitParameters.keys[index]] ?: "?"
-            val scoreValue = valueToPrecision(d, digits[index])
-            val reportableValue = valueToString(d, digits[index])
-            val reportableSEM = normativeScores[index].semAsString
+        return gaitParameters.map.map {
+            val key = it.key
+            val value = it.value
+
+            val reportableName = GaitParameters.names[key]!!
+            val scoreValue = valueToPrecision(value, digits[key]!!)
+            val reportableValue = valueToString(value, digits[key]!!)
+            val reportableSEM = normativeScores[key]!!.semAsString
+            val reportableUnits = GaitParameters.units[key]!!
             val reportableRange: String
-            val reportableUnits = GaitParameters.units[GaitParameters.keys[index]] ?: "?"
             val isHighlighted: Boolean
 
-            if (GaitParameters.keys[index] == "sym") {
-                reportableRange = "≥ ${normativeScores[index].normativeLowerBoundAsString}"
-                isHighlighted = scoreValue < normativeScores[index].normativeLowerBound
+            if (GaitParameters.isLowerBoundedOnly[key]!!) {
+                reportableRange = "≥ ${normativeScores[key]!!.normativeLowerBoundAsString}"
+                isHighlighted = scoreValue < normativeScores[key]!!.normativeLowerBound
             } else {
                 reportableRange =
-                    "[${normativeScores[index].normativeRangeAsString[0]}, ${normativeScores[index].normativeRangeAsString[1]}]"
+                    "[${normativeScores[key]!!.normativeRangeAsString[0]}, ${normativeScores[key]!!.normativeRangeAsString[1]}]"
                 isHighlighted =
-                    scoreValue < normativeScores[index].normativeRange[0] || scoreValue > normativeScores[index].normativeRange[1]
+                    scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
             }
 
-            ReportableParameter(
-                reportableName,
-                reportableValue,
-                reportableSEM,
-                reportableRange,
-                reportableUnits,
-                isHighlighted
+            Pair(
+                key, ReportableParameter(
+                    reportableName,
+                    reportableValue,
+                    reportableSEM,
+                    reportableRange,
+                    reportableUnits,
+                    isHighlighted
+                )
             )
-        }).toMap()
+        }.toMap()
     }
 
     fun makeReportableParameters(
@@ -118,46 +69,65 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
     ): Map<String, ReportableParameter> {
         val digits = significantDigits[taskQualifier]
         val normativeScores = database[taskQualifier]
-        return BalanceParameters.keys.zip(balanceParameters.array.mapIndexed { index, d ->
-            val reportableName = BalanceParameters.names[BalanceParameters.keys[index]] ?: "?"
-            val scoreValue = valueToPrecision(d, digits[index])
-            val reportableValue = valueToString(d, digits[index])
-            val reportableSEM = normativeScores[index].semAsString
+        return balanceParameters.map.map {
 
-            val reportableRange = "≥ ${normativeScores[index].normativeLowerBoundAsString}"
-            val reportableUnits = BalanceParameters.units[BalanceParameters.keys[index]] ?: "?"
-            val isHighlighted = scoreValue < normativeScores[index].normativeLowerBound
+            val key = it.key
+            val value = it.value
 
-            ReportableParameter(
-                reportableName,
-                reportableValue,
-                reportableSEM,
-                reportableRange,
-                reportableUnits,
-                isHighlighted
+            val reportableName = BalanceParameters.names[key]!!
+            val scoreValue = valueToPrecision(value, digits[key]!!)
+            val reportableValue = valueToString(value, digits[key]!!)
+            val reportableSEM = normativeScores[key]!!.semAsString
+            val reportableUnits = BalanceParameters.units[key]!!
+            val reportableRange: String
+            val isHighlighted: Boolean
+
+            if (BalanceParameters.isLowerBoundedOnly[key]!!) {
+                reportableRange = "≥ ${normativeScores[key]!!.normativeLowerBoundAsString}"
+                isHighlighted = scoreValue < normativeScores[key]!!.normativeLowerBound
+            } else {
+                reportableRange =
+                    "[${normativeScores[key]!!.normativeRangeAsString[0]}, ${normativeScores[key]!!.normativeRangeAsString[1]}]"
+                isHighlighted =
+                    scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+            }
+
+            Pair(
+                key, ReportableParameter(
+                    reportableName,
+                    reportableValue,
+                    reportableSEM,
+                    reportableRange,
+                    reportableUnits,
+                    isHighlighted
+                )
             )
-        }).toMap()
+        }.toMap()
     }
 
     private val database by lazy {
-        NormativeModels.modelList.map { taskQualifiers ->
-            taskQualifiers.map { model ->
-                model2Score(model)
-            }
+        NormativeModels.modelList.map { taskQualifier ->
+            taskQualifier.map { keyModel ->
+                model2Score(keyModel)
+            }.toMap()
         }
     }
 
     private val significantDigits by lazy {
-        NormativeModels.modelList.map { taskQualifiers ->
-            taskQualifiers.map { model ->
-                model.significantDigits
-            }
+        NormativeModels.modelList.map { taskQualifier ->
+            taskQualifier.map { keyModel ->
+                Pair(keyModel.key, keyModel.value.significantDigits)
+            }.toMap()
         }
     }
 
     private fun model2Score(
-        model: NormativeModel
-    ): NormativeScore {
+        keyModel: Map.Entry<String, NormativeModel>
+    ): Pair<String, ReportableNormativeScore> {
+
+        val key = keyModel.key
+        val model = keyModel.value
+
         val bmi = massInKGs / (heightInCM / 100.0).pow(2)
 
         val normativeMean = model.intercept +
@@ -165,30 +135,48 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
                 model.bmiBeta * bmi +
                 model.heightInCMBeta * heightInCM
 
-        val normativeRange = listOf(
-            valueToPrecision(normativeMean - 1.96 * model.normativeSD, model.significantDigits),
-            valueToPrecision(normativeMean + 1.96 * model.normativeSD, model.significantDigits)
-        )
         val normativeLowerBound = valueToPrecision(normativeMean - 1.645 * model.normativeSD, model.significantDigits)
         val normativeLowerBoundAsString = valueToString(normativeLowerBound, model.significantDigits)
 
         val semWithPrecision = valueToPrecision(model.sem, model.significantDigits)
         val semAsString = valueToString(model.sem, model.significantDigits)
-        val normativeRangeAsString = listOf(
-            valueToString(normativeRange[0], model.significantDigits),
-            valueToString(normativeRange[1], model.significantDigits)
+
+        val normativeRange = listOf(
+            normativeMean - 1.96 * model.normativeSD,
+            normativeMean + 1.96 * model.normativeSD
         )
+        val normativeRangeWithPrecision = normativeRange.map {
+            valueToPrecision(it, model.significantDigits)
+        }
+
+        val isLowerBoundedOnly =
+            GaitParameters.isLowerBoundedOnly[key] == true || BalanceParameters.isLowerBoundedOnly[key] == true
+
+        val normativeRangeAsString = if (isLowerBoundedOnly) {
+            normativeLowerBoundAsString
+        } else {
+            "[${valueToString(normativeRange[0], model.significantDigits)}, ${
+                valueToString(
+                    normativeRange[1],
+                    model.significantDigits
+                )
+            }]"
+        }
+
         val mdcWithPrecision = valueToPrecision(model.mdc, model.significantDigits)
         val mdcAsString = valueToString(model.mdc, model.significantDigits)
-        return NormativeScore(
-            normativeLowerBound,
-            normativeLowerBoundAsString,
-            semWithPrecision,
-            semAsString,
-            normativeRange,
-            normativeRangeAsString,
-            mdcWithPrecision,
-            mdcAsString
+
+        return Pair(
+            key, ReportableNormativeScore(
+                normativeLowerBound,
+                normativeLowerBoundAsString,
+                semWithPrecision,
+                semAsString,
+                normativeRangeWithPrecision,
+                normativeRangeAsString,
+                mdcWithPrecision,
+                mdcAsString
+            )
         )
     }
 
