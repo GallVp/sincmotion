@@ -12,7 +12,7 @@ class NormativeModelTests {
                 sem = 1.0,
                 semAsString = "1",
                 normativeRange = listOf(65.0, 74.0),
-                normativeRangeAsString = "66",
+                normativeRangeAsString = "≥ 66",
                 mdc = 3.0,
                 mdcAsString = "3"
             )
@@ -40,7 +40,7 @@ class NormativeModelTests {
                 sem = 0.1,
                 semAsString = "0.1",
                 normativeRange = listOf(3.6, 4.4),
-                normativeRangeAsString = "3.7",
+                normativeRangeAsString = "≥ 3.7",
                 mdc = 0.3,
                 mdcAsString = "0.3"
             )
@@ -54,7 +54,7 @@ class NormativeModelTests {
                 sem = 0.1,
                 semAsString = "0.1",
                 normativeRange = listOf(3.0, 4.0),
-                normativeRangeAsString = "3.1",
+                normativeRangeAsString = "≥ 3.1",
                 mdc = 0.4,
                 mdcAsString = "0.4"
             )

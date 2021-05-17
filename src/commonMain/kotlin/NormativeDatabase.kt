@@ -48,17 +48,12 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             val reportableValue = valueToString(value, digits[key]!!)
             val reportableSEM = normativeScores[key]!!.semAsString
             val reportableUnits = GaitParameters.units[key]!!
-            val reportableRange: String
-            val isHighlighted: Boolean
+            val reportableRange = normativeScores[key]!!.normativeRangeAsString
 
-            if (GaitParameters.isLowerBoundedOnly[key]!!) {
-                reportableRange = "≥ ${normativeScores[key]!!.normativeLowerBoundAsString}"
-                isHighlighted = scoreValue < normativeScores[key]!!.normativeLowerBound
+            val isHighlighted = if (GaitParameters.isLowerBoundedOnly[key]!!) {
+                scoreValue < normativeScores[key]!!.normativeLowerBound
             } else {
-                reportableRange =
-                    "[${normativeScores[key]!!.normativeRangeAsString[0]}, ${normativeScores[key]!!.normativeRangeAsString[1]}]"
-                isHighlighted =
-                    scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+                scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
             }
 
             Pair(
@@ -90,17 +85,12 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             val reportableValue = valueToString(value, digits[key]!!)
             val reportableSEM = normativeScores[key]!!.semAsString
             val reportableUnits = BalanceParameters.units[key]!!
-            val reportableRange: String
-            val isHighlighted: Boolean
+            val reportableRange = normativeScores[key]!!.normativeRangeAsString
 
-            if (BalanceParameters.isLowerBoundedOnly[key]!!) {
-                reportableRange = "≥ ${normativeScores[key]!!.normativeLowerBoundAsString}"
-                isHighlighted = scoreValue < normativeScores[key]!!.normativeLowerBound
+            val isHighlighted: Boolean = if (BalanceParameters.isLowerBoundedOnly[key]!!) {
+                scoreValue < normativeScores[key]!!.normativeLowerBound
             } else {
-                reportableRange =
-                    "[${normativeScores[key]!!.normativeRangeAsString[0]}, ${normativeScores[key]!!.normativeRangeAsString[1]}]"
-                isHighlighted =
-                    scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+                scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
             }
 
             Pair(
@@ -164,7 +154,7 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             GaitParameters.isLowerBoundedOnly[key] == true || BalanceParameters.isLowerBoundedOnly[key] == true
 
         val normativeRangeAsString = if (isLowerBoundedOnly) {
-            normativeLowerBoundAsString
+            "≥ $normativeLowerBoundAsString"
         } else {
             "[${valueToString(normativeRange[0], model.significantDigits)}, ${
                 valueToString(
