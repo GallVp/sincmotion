@@ -47,6 +47,7 @@ kotlin {
         summary = "SincMotion Library"
         homepage = "https://github.com/GallVp/SincMathsMP"
         authors = "Usman Rashid"
+        ios.deploymentTarget = "13.0"
 
         frameworkName = "SincMotion"
     }
