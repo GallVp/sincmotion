@@ -7,7 +7,7 @@ plugins {
     id "org.jetbrains.kotlin.native.cocoapods" version "1.5.0"
 }
 
-group = 'nz.ac.aut.sincmotion'
+group = 'com.github.gallvp'
 version = '0.1-SNAPSHOT'
 
 repositories {
@@ -45,7 +45,7 @@ kotlin {
 
     cocoapods {
         summary = "SincMotion Library"
-        homepage = "https://github.com/GallVp/SincMathsMP"
+        homepage = "https://github.com/GallVp/SincMotionMP"
         authors = "Usman Rashid"
         ios.deploymentTarget = "13.0"
 
@@ -55,7 +55,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation "nz.ac.aut.sincmaths:sincmaths-core:0.1-SNAPSHOT"
+                implementation "com.github.gallvp:sincmathsmp:0.1-SNAPSHOT"
             }
         }
         commonTest {
@@ -84,7 +84,7 @@ kotlin {
 android {
     defaultConfig {
         ndkVersion "21.3.6528147"
-        buildToolsVersion "30.0.0"
+        buildToolsVersion "30.0.2"
         compileSdkVersion 30
         targetSdkVersion 30
         minSdkVersion 16

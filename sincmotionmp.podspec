@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'sincmotion_core'
+    spec.name                     = 'sincmotionmp'
     spec.version                  = '0.1-SNAPSHOT'
-    spec.homepage                 = 'https://github.com/GallVp/SincMathsMP'
+    spec.homepage                 = 'https://github.com/GallVp/SincMotionMP'
     spec.source                   = { :git => "Not Published", :tag => "Cocoapods/#{spec.name}/#{spec.version}" }
     spec.authors                  = 'Usman Rashid'
     spec.license                  = ''
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
 
     spec.script_phases = [
         {
-            :name => 'Build sincmotion_core',
+            :name => 'Build sincmotionmp',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT

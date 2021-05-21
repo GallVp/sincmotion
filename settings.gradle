@@ -1,7 +1,6 @@
 pluginManagement {
     repositories {
         google()
-        jcenter()
         gradlePluginPortal()
         mavenCentral()
     }
@@ -13,5 +12,5 @@ pluginManagement {
         }
     }
 }
-rootProject.name = 'sincmotion-core'
+rootProject.name = 'sincmotionmp'
 
