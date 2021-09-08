@@ -54,17 +54,17 @@ data class GaitParameters(
         val keys by lazy {
             listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
         }
-        val isLowerBoundedOnly by lazy {
+        val normativeRangeType by lazy {
             keys.zip(
                 listOf(
-                    true,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
-                    false,
+                    NormativeRangeType.LOWER,
+                    NormativeRangeType.MIDDLE,
+                    NormativeRangeType.MIDDLE,
+                    NormativeRangeType.UPPER,
+                    NormativeRangeType.UPPER,
+                    NormativeRangeType.UPPER,
+                    NormativeRangeType.UPPER,
+                    NormativeRangeType.MIDDLE,
                 )
             ).toMap()
         }

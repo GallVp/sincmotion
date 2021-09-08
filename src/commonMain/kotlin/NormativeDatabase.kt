@@ -46,21 +46,19 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             val reportableName = GaitParameters.names[key]!!
             val scoreValue = valueToPrecision(value, digits[key]!!)
             val reportableValue = valueToString(value, digits[key]!!)
-            val reportableSEM = normativeScores[key]!!.semAsString
             val reportableUnits = GaitParameters.units[key]!!
             val reportableRange = normativeScores[key]!!.normativeRangeAsString
 
-            val isHighlighted = if (GaitParameters.isLowerBoundedOnly[key]!!) {
-                scoreValue < normativeScores[key]!!.normativeLowerBound
-            } else {
-                scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+            val isHighlighted = when (GaitParameters.normativeRangeType[key]!!) {
+                NormativeRangeType.LOWER -> scoreValue < normativeScores[key]!!.normativeLowerBound
+                NormativeRangeType.MIDDLE -> scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+                NormativeRangeType.UPPER -> scoreValue > normativeScores[key]!!.normativeUpperBound
             }
 
             Pair(
                 key, ReportableParameter(
                     reportableName,
                     reportableValue,
-                    reportableSEM,
                     reportableRange,
                     reportableUnits,
                     isHighlighted
@@ -83,21 +81,19 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             val reportableName = BalanceParameters.names[key]!!
             val scoreValue = valueToPrecision(value, digits[key]!!)
             val reportableValue = valueToString(value, digits[key]!!)
-            val reportableSEM = normativeScores[key]!!.semAsString
             val reportableUnits = BalanceParameters.units[key]!!
             val reportableRange = normativeScores[key]!!.normativeRangeAsString
 
-            val isHighlighted: Boolean = if (BalanceParameters.isLowerBoundedOnly[key]!!) {
-                scoreValue < normativeScores[key]!!.normativeLowerBound
-            } else {
-                scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+            val isHighlighted = when (BalanceParameters.normativeRangeType[key]!!) {
+                NormativeRangeType.LOWER -> scoreValue < normativeScores[key]!!.normativeLowerBound
+                NormativeRangeType.MIDDLE -> scoreValue < normativeScores[key]!!.normativeRange[0] || scoreValue > normativeScores[key]!!.normativeRange[1]
+                NormativeRangeType.UPPER -> scoreValue > normativeScores[key]!!.normativeUpperBound
             }
 
             Pair(
                 key, ReportableParameter(
                     reportableName,
                     reportableValue,
-                    reportableSEM,
                     reportableRange,
                     reportableUnits,
                     isHighlighted
@@ -139,8 +135,8 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
         val normativeLowerBound = valueToPrecision(normativeMean - 1.645 * model.normativeSD, model.significantDigits)
         val normativeLowerBoundAsString = valueToString(normativeLowerBound, model.significantDigits)
 
-        val semWithPrecision = valueToPrecision(model.sem, model.significantDigits)
-        val semAsString = valueToString(model.sem, model.significantDigits)
+        val normativeUpperBound = valueToPrecision(normativeMean + 1.645 * model.normativeSD, model.significantDigits)
+        val normativeUpperBoundAsString = valueToString(normativeUpperBound, model.significantDigits)
 
         val normativeRange = listOf(
             normativeMean - 1.96 * model.normativeSD,
@@ -150,18 +146,21 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             valueToPrecision(it, model.significantDigits)
         }
 
-        val isLowerBoundedOnly =
-            GaitParameters.isLowerBoundedOnly[key] == true || BalanceParameters.isLowerBoundedOnly[key] == true
-
-        val normativeRangeAsString = if (isLowerBoundedOnly) {
-            "≥ $normativeLowerBoundAsString"
+        val rangeType = if (GaitParameters.normativeRangeType[key] != null) {
+            GaitParameters.normativeRangeType[key]!!
         } else {
-            "[${valueToString(normativeRange[0], model.significantDigits)}, ${
+            BalanceParameters.normativeRangeType[key]!!
+        }
+
+        val normativeRangeAsString = when (rangeType) {
+            NormativeRangeType.LOWER -> "≥ $normativeLowerBoundAsString"
+            NormativeRangeType.MIDDLE -> "[${valueToString(normativeRange[0], model.significantDigits)}, ${
                 valueToString(
                     normativeRange[1],
                     model.significantDigits
                 )
             }]"
+            NormativeRangeType.UPPER -> "≤ $normativeUpperBoundAsString"
         }
 
         val mdcWithPrecision = valueToPrecision(model.mdc, model.significantDigits)
@@ -171,12 +170,12 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
             key, ReportableNormativeScore(
                 normativeLowerBound,
                 normativeLowerBoundAsString,
-                semWithPrecision,
-                semAsString,
+                normativeUpperBound,
+                normativeUpperBoundAsString,
                 normativeRangeWithPrecision,
                 normativeRangeAsString,
                 mdcWithPrecision,
-                mdcAsString
+                mdcAsString,
             )
         )
     }

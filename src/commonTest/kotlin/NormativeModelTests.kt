@@ -9,8 +9,8 @@ class NormativeModelTests {
             ReportableNormativeScore(
                 normativeLowerBound = 66.0,
                 normativeLowerBoundAsString = "66",
-                sem = 1.0,
-                semAsString = "1",
+                normativeUpperBound = 73.0,
+                normativeUpperBoundAsString = "73",
                 normativeRange = listOf(65.0, 74.0),
                 normativeRangeAsString = "≥ 66",
                 mdc = 3.0,
@@ -21,13 +21,13 @@ class NormativeModelTests {
         assertEquals(
             getReportableNormativeScore(5, "slv", 17.0, 100.0, 150.099),
             ReportableNormativeScore(
-                normativeLowerBound = 1.9,
+                normativeLowerBound = 1.900000,
                 normativeLowerBoundAsString = "1.9",
-                sem = 0.8,
-                semAsString = "0.8",
-                normativeRange = listOf(1.6, 5.4),
-                normativeRangeAsString = "[1.6, 5.4]",
-                mdc = 2.3,
+                normativeUpperBound = 5.100000,
+                normativeUpperBoundAsString = "5.1",
+                normativeRange = listOf(1.600000, 5.400000),
+                normativeRangeAsString = "≤ 5.1",
+                mdc = 2.300000,
                 mdcAsString = "2.3"
             )
         )
@@ -35,13 +35,13 @@ class NormativeModelTests {
         assertEquals(
             getReportableNormativeScore(0, "maa-ap", 85.0, 50.0, 190.0),
             ReportableNormativeScore(
-                normativeLowerBound = 3.7,
+                normativeLowerBound = 3.700000,
                 normativeLowerBoundAsString = "3.7",
-                sem = 0.1,
-                semAsString = "0.1",
-                normativeRange = listOf(3.6, 4.4),
+                normativeUpperBound = 4.400000,
+                normativeUpperBoundAsString = "4.4",
+                normativeRange = listOf(3.600000, 4.400000),
                 normativeRangeAsString = "≥ 3.7",
-                mdc = 0.3,
+                mdc = 0.300000,
                 mdcAsString = "0.3"
             )
         )
@@ -49,13 +49,13 @@ class NormativeModelTests {
         assertEquals(
             getReportableNormativeScore(3, "maa-ap", 30.0, 65.0, 170.18),
             ReportableNormativeScore(
-                normativeLowerBound = 3.1,
+                normativeLowerBound = 3.100000,
                 normativeLowerBoundAsString = "3.1",
-                sem = 0.1,
-                semAsString = "0.1",
-                normativeRange = listOf(3.0, 4.0),
+                normativeUpperBound = 3.900000,
+                normativeUpperBoundAsString = "3.9",
+                normativeRange = listOf(3.000000, 4.000000),
                 normativeRangeAsString = "≥ 3.1",
-                mdc = 0.4,
+                mdc = 0.400000,
                 mdcAsString = "0.4"
             )
         )
@@ -63,13 +63,13 @@ class NormativeModelTests {
         assertEquals(
             getReportableNormativeScore(4, "sta", 30.0, 65.0, 170.18),
             ReportableNormativeScore(
-                normativeLowerBound = -1.0,
+                normativeLowerBound = -1.000000,
                 normativeLowerBoundAsString = "-1",
-                sem = 1.0,
-                semAsString = "1",
-                normativeRange = listOf(-2.0, 7.0),
-                normativeRangeAsString = "[-2, 7]",
-                mdc = 4.0,
+                normativeUpperBound = 6.000000,
+                normativeUpperBoundAsString = "6",
+                normativeRange = listOf(-2.000000, 7.000000),
+                normativeRangeAsString = "≤ 6",
+                mdc = 4.000000,
                 mdcAsString = "4"
             )
         )
