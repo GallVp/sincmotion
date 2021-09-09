@@ -22,14 +22,14 @@ data class GaitParameters(
         map["s-vel"] ?: Double.NaN,
     )
 
-    override fun toString(): String = "Periodicity index: $meanSymIndex %\n" +
+    override fun toString(): String = "Walking balance: $meanSymIndex %\n" +
             "Step length: $meanStepLength m\n" +
             "Step time: $meanStepTime s\n" +
             "Step length variability: $stepLengthVariability %\n" +
             "Step time variability: $stepTimeVariability %\n" +
             "Step length asymmetry: $stepLengthAsymmetry %\n" +
             "Step time asymmetry: $stepTimeAsymmetry %\n" +
-            "Step velocity: $meanStepVelocity m/s"
+            "Walking speed: $meanStepVelocity m/s"
 
     val array by lazy {
         listOf(
@@ -53,6 +53,9 @@ data class GaitParameters(
         const val defaultParameterIndex = 0
         val keys by lazy {
             listOf("sym", "s-len", "s-time", "slv", "stv", "sla", "sta", "s-vel")
+        }
+        val presentationKeys by lazy {
+            listOf("sym", "s-vel", "s-len", "s-time", "slv", "stv", "sla", "sta")
         }
         val normativeRangeType by lazy {
             keys.zip(
@@ -85,28 +88,28 @@ data class GaitParameters(
         val names by lazy {
             keys.zip(
                 listOf(
-                    "Periodicity index",
+                    "Walking balance",
                     "Step length",
                     "Step time",
                     "Step length variability",
                     "Step time variability",
                     "Step length asymmetry",
                     "Step time asymmetry",
-                    "Step velocity"
+                    "Walking speed"
                 )
             ).toMap()
         }
         val namesWithUnits by lazy {
             keys.zip(
                 listOf(
-                    "Periodicity index (%)",
+                    "Walking balance (%)",
                     "Step length (m)",
                     "Step time (s)",
                     "Step length variability (%)",
                     "Step time variability (%)",
                     "Step length asymmetry (%)",
                     "Step time asymmetry (%)",
-                    "Step velocity (m/s)"
+                    "Walking speed (m/s)"
                 )
             ).toMap()
         }
