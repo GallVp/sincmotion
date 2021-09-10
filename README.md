@@ -6,6 +6,10 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 
 ## Change Log
 
+### Version 0.1.3 <10092021>
+
++ Changed normative range for s-vel, s-len, s-time.
+
 ### Version 0.1.2 <09092021>
 
 + Changed order and names of the gait parameters.

@@ -61,13 +61,13 @@ data class GaitParameters(
             keys.zip(
                 listOf(
                     NormativeRangeType.LOWER,
-                    NormativeRangeType.MIDDLE,
-                    NormativeRangeType.MIDDLE,
+                    NormativeRangeType.LOWER,
                     NormativeRangeType.UPPER,
                     NormativeRangeType.UPPER,
                     NormativeRangeType.UPPER,
                     NormativeRangeType.UPPER,
-                    NormativeRangeType.MIDDLE,
+                    NormativeRangeType.UPPER,
+                    NormativeRangeType.LOWER,
                 )
             ).toMap()
         }
