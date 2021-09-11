@@ -57,6 +57,9 @@ data class GaitParameters(
         val presentationKeys by lazy {
             listOf("sym", "s-vel", "s-len", "s-time", "slv", "stv", "sla", "sta")
         }
+        val summaryKeys by lazy {
+            listOf("sym", "s-vel")
+        }
         val normativeRangeType by lazy {
             keys.zip(
                 listOf(

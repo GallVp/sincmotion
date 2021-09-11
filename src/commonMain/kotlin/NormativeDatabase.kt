@@ -67,6 +67,14 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
         }.toMap()
     }
 
+    fun makeSummaryFromParameters(taskQualifier: Int, gaitParameters: GaitParameters): BooleanArray {
+        val reportable =  makeReportableParameters(taskQualifier, gaitParameters)
+
+        return GaitParameters.summaryKeys.map {
+            !reportable[it]!!.isRangeHighlighted
+        }.toBooleanArray()
+    }
+
     fun makeReportableParameters(
         taskQualifier: Int,
         balanceParameters: BalanceParameters
@@ -100,6 +108,17 @@ data class NormativeDatabase(val ageInYears: Double, val massInKGs: Double, val 
                 )
             )
         }.toMap()
+    }
+
+    fun makeSummaryFromParameters(
+        taskQualifier: Int,
+        balanceParameters: BalanceParameters
+    ): BooleanArray {
+        val reportable =  makeReportableParameters(taskQualifier, balanceParameters)
+
+        return BalanceParameters.summaryKeys.map {
+            !reportable[it]!!.isRangeHighlighted
+        }.toBooleanArray()
     }
 
     private val database by lazy {

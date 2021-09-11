@@ -6,6 +6,10 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 
 ## Change Log
 
+### Version 0.1.4 <11092021>
+
++ Added functions for summary report.
+
 ### Version 0.1.3 <10092021>
 
 + Changed normative range for s-vel, s-len, s-time.
