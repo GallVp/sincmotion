@@ -1,14 +1,14 @@
 plugins {
-    id 'org.jetbrains.kotlin.multiplatform' version '1.5.0'
+    id 'org.jetbrains.kotlin.multiplatform' version '1.6.10'
     id 'com.android.library'
     id 'kotlin-android-extensions'
     id 'maven-publish'
-    id "org.jetbrains.dokka" version "1.4.30"
-    id "org.jetbrains.kotlin.native.cocoapods" version "1.5.0"
+    id "org.jetbrains.dokka" version "1.6.10"
+    id "org.jetbrains.kotlin.native.cocoapods" version "1.6.10"
 }
 
 group = 'com.github.gallvp'
-version = '0.1.4'
+version = '0.2'
 
 repositories {
     google()
@@ -23,6 +23,11 @@ kotlin {
         publishAllLibraryVariants()
     }
     ios {
+        binaries {
+            framework {
+                baseName = 'SincMotion'
+            }
+        }
     }
 
     tasks.register("debugFatFramework", FatFrameworkTask) {
@@ -55,7 +60,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                implementation "com.github.gallvp:sincmathsmp:0.1"
+                implementation "com.github.gallvp:sincmathsmp:0.2"
             }
         }
         commonTest {
@@ -69,7 +74,7 @@ kotlin {
         androidTest {
             dependencies {
                 implementation kotlin('test-junit')
-                implementation 'androidx.test.espresso:espresso-core:3.3.0'
+                implementation 'androidx.test.espresso:espresso-core:3.4.0'
             }
         }
         iosMain {
@@ -83,10 +88,9 @@ kotlin {
 
 android {
     defaultConfig {
-        ndkVersion "21.3.6528147"
-        buildToolsVersion "30.0.2"
-        compileSdkVersion 30
-        targetSdkVersion 30
+        ndkVersion "23.0.7599858"
+        compileSdkVersion 31
+        targetSdkVersion 31
         minSdkVersion 16
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

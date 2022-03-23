@@ -1,8 +1,4 @@
-import sincmaths.SincMatrix
-import sincmaths.asSincMatrix
-import sincmaths.sincmatrix.all
-import sincmaths.sincmatrix.lt
-import sincmaths.sincmatrix.minus
+import sincmaths.*
 import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 import sincmotion.SincMotionProcessor

@@ -1,10 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.diff
-import sincmaths.sincmatrix.get
-import sincmaths.sincmatrix.getRows
-import sincmaths.sincmatrix.gt
+import sincmaths.*
 
 internal fun cgCreateSegments(
     timeVectorIn: SincMatrix,

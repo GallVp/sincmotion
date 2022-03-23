@@ -1,8 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.asSincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 
 /**
  * Return user to reference pre-multiplying rotation matrix

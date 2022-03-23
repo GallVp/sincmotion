@@ -1,6 +1,5 @@
 import platform.Foundation.NSBundle
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 

@@ -1,7 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.filtfilt
+import sincmaths.*
 
 internal fun bandPassAt100From0d3To45(inputData: SincMatrix): SincMatrix {
     // Low pass at 45 Hz

@@ -1,7 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 
 internal fun computeMAA(accelMat: SincMatrix): MAAComputes {
     val maaML = accelMat.getCol(1).abs().mean().scalar

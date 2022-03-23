@@ -1,7 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 
 internal fun footEvents(aVert: SincMatrix, gAP: SincMatrix, fs: Double): FootEvents {
     val cwtScale = 16.0

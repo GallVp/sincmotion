@@ -1,7 +1,4 @@
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.csvread
-import sincmaths.sincmatrix.getCol
-import sincmaths.sincmatrix.getCols
+import sincmaths.*
 import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 

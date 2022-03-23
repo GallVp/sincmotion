@@ -1,7 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 
 internal fun cgsOutcomes(
     accelData: SincMatrix,

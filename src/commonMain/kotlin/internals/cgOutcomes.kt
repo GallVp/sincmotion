@@ -1,8 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.asRowVector
-import sincmaths.sincmatrix.*
+import sincmaths.*
 import sincmotion.GaitParameters
 import kotlin.math.absoluteValue
 import kotlin.math.pow

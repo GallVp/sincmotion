@@ -6,6 +6,14 @@ MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/inn
 
 ## Change Log
 
+### Version 0.2 <23032022>
+
++ Updated to kotlin to 1.6.10.
++ Updated SincMaths to 0.2.
++ Updated espresso-core to 3.4.0.
++ Updated Android SDK to 31.
++ Updated Android NDK to 23.0.7599858.
+
 ### Version 0.1.4 <11092021>
 
 + Added functions for summary report.

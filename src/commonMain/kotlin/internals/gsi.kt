@@ -1,7 +1,6 @@
 package sincmotion.internals
 
-import sincmaths.SincMatrix
-import sincmaths.sincmatrix.*
+import sincmaths.*
 import kotlin.math.roundToInt
 
 internal fun gsi(accelMat: SincMatrix, fs: Double): GsiOutcomes {
