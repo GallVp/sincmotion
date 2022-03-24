@@ -2,17 +2,18 @@
 
 ## Reference Implementation
 
-MATLAB Reference Implementation version: [b855a26](https://github.com/GallVp/innerEarMatlab/commit/b855a2687972a6dceb768848287e10054ec1ff74), Test Tol. = 1e-10 
+MATLAB Reference Implementation version: [e1142a5](https://github.com/GallVp/innerEarMatlab/commit/e1142a56ab229c11319e13a1c9e462e8bb3ad136), Test Tol. = 1e-10 
 
 ## Change Log
 
 ### Version 0.2 <23032022>
 
 + Updated to kotlin to 1.6.10.
-+ Updated SincMaths to 0.2.
++ Updated SincMaths to 0.2.1.
 + Updated espresso-core to 3.4.0.
 + Updated Android SDK to 31.
 + Updated Android NDK to 23.0.7599858.
++ Added the improved version of `gsi` algo from MATLAB.
 
 ### Version 0.1.4 <11092021>
 
