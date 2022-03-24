@@ -26,5 +26,5 @@ expect class SincMotionProcessor() {
 internal val SincMotionProcessor.isDebug: Boolean
     get() = false
 
-val SincMotionProcessor.processorVersion : Int
-    get() = 1
+val SincMotionProcessor.matlabRefVersion : String
+    get() = "0.3"
