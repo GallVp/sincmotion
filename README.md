@@ -2,7 +2,17 @@
 
 ## Reference Implementation
 
-MATLAB Reference Implementation version: [e1142a5](https://github.com/GallVp/innerEarMatlab/commit/e1142a56ab229c11319e13a1c9e462e8bb3ad136), Test Tol. = 1e-10 
+MATLAB Reference Implementation version: [e1142a5](https://github.com/GallVp/innerEarMatlab/commit/e1142a56ab229c11319e13a1c9e462e8bb3ad136), Test Tol. = 1e-10
+
+## Validation Data
+
+The validation data is placed inside *./build/bin/iosX64/debugTest* directory. Each study has its own folder. Each study folder contains all the app raw data files and an *Outcomes* folder which contains the *AppValidationData* and *AppValidationGaitData* folders.
+
+If the app data is located in participant-wise folders, it can be extracted to a single parent folder with the following bash command.
+
+```shell
+find . -mindepth 2 -type f -print -exec mv {} . \;
+```
 
 ## Change Log
 
@@ -14,6 +24,7 @@ MATLAB Reference Implementation version: [e1142a5](https://github.com/GallVp/inn
 + Updated Android SDK to 31.
 + Updated Android NDK to 23.0.7599858.
 + Added the improved version of `gsi` algo from MATLAB.
++ Added NAVSII validation data.
 
 ### Version 0.1.4 <11092021>
 

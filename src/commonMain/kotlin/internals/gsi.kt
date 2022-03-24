@@ -1,14 +1,14 @@
 package sincmotion.internals
 
 import sincmaths.*
-import kotlin.math.max
+import kotlin.math.min
 import kotlin.math.roundToInt
 import kotlin.math.sqrt
 
 internal fun gsi(accelMat: SincMatrix, fs: Double): GsiOutcomes {
 
     val accelSignalLen = accelMat.length()
-    val lenForAcf = max(fs*4.0, accelSignalLen - 1.0).toInt()
+    val lenForAcf = min(fs*4.0, accelSignalLen - 1.0).toInt()
 
     val arx = accelMat.getCol(1).acf(lenForAcf)
     val ary = accelMat.getCol(2).acf(lenForAcf)

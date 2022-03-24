@@ -4,19 +4,21 @@ import sincmotion.BalanceParameters
 import sincmotion.GaitParameters
 
 actual class StudyData {
-    actual val studyNames = listOf("SAVS")
+    actual val studyNames = listOf("SAVS", "NAVSII")
     private val fs: Double = 100.0
 
     actual fun validateStudyFile(forStudy: String, fileName: String, testTol: Double) {
         val filePath = "$forStudy/$fileName"
         val studyOutcomes = getOutcomeMatrices(forStudy)
+        val exceptionList = getExceptionList(forStudy)
 
-        validateStudyFile(forStudy, filePath, testTol, studyOutcomes)
+        validateStudyFile(forStudy, filePath, testTol, studyOutcomes, exceptionList)
     }
 
     actual fun validateStudyData(forStudy: String, testTol: Double, sampleSize: Int) {
         val filePaths = getStudyFilePaths(forStudy)
         val studyOutcomes = getOutcomeMatrices(forStudy)
+        val exceptionList = getExceptionList(forStudy)
 
         val sample: List<Int>
         val selectedFilePaths = if (sampleSize != 0) {
@@ -28,7 +30,7 @@ actual class StudyData {
         }
         selectedFilePaths.mapIndexed { index: Int, path: String ->
             println("Index: ${sample[index]}; File: ${path.split("/").last()}")
-            validateStudyFile(forStudy, path, testTol, studyOutcomes)
+            validateStudyFile(forStudy, path, testTol, studyOutcomes, exceptionList)
         }
     }
 
@@ -36,9 +38,16 @@ actual class StudyData {
         forStudy: String,
         filePath: String,
         testTol: Double,
-        studyOutcomes: Pair<SincMatrix, SincMatrix>
+        studyOutcomes: Pair<SincMatrix, SincMatrix>,
+        exceptionList: SincMatrix?
     ) {
-        val (fileName, fileParameters) = extractFileParameters(filePath)
+        val (fileName, fileParameters) = extractFileParameters(forStudy, filePath)
+        exceptionList?.let {
+            if(isExcepted(it, fileParameters)) {
+                println("File is in the exception list.")
+                return
+            }
+        }
         val fileMatrix = getFileMatrixByName(forStudy, fileName)
         val (referenceOutcomes, personHeight) = getReferenceOutcomes(studyOutcomes, fileParameters)
         val exampleDatum = ExampleDatum(
@@ -61,6 +70,19 @@ actual class StudyData {
             separator = ",",
             headerInfo = listOf("t", "d", "d", "d", "d", "d", "d", "d", "d", "d", "d")
         )
+    }
+
+    private fun getExceptionList(studyName: String): SincMatrix? {
+        val filePath = "$studyName/Outcomes/ExceptionList.csv"
+        return try {
+            SincMatrix.csvread(
+                filePath = filePath,
+                separator = ",",
+                headerInfo = listOf("d", "d", "d", "d", "d")
+            )
+        } catch (_:IllegalArgumentException) {
+            null
+        }
     }
 
     private fun getOutcomeMatrices(studyName: String): Pair<SincMatrix, SincMatrix> {
@@ -86,9 +108,9 @@ actual class StudyData {
         NSBundle.mainBundle.pathsForResourcesOfType(".csv", studyName) as List<String>
 
 
-    private fun extractFileParameters(filePath: String): Pair<String, StudyFileParameters> {
+    private fun extractFileParameters(forStudy: String, filePath: String): Pair<String, StudyFileParameters> {
         val fileName = filePath.split("/").last().split(".").first()
-        val fileGroups = filePattern.matchEntire(fileName)!!.groups
+        val fileGroups = filePattern[forStudy]!!.matchEntire(fileName)!!.groups
         return Pair(
             fileName, StudyFileParameters(
                 partID = fileGroups[1]!!.value,
@@ -140,6 +162,19 @@ actual class StudyData {
         )
     }
 
-    private val filePattern =
-        Regex("S([0-9]+) Test set ([1-3]+) on ([0-9]+) ([a-zA-Z]+) ([0-9]+) ([a-zA-Z]+) ([a-zA-Z]+)")
+    private fun isExcepted(
+        exceptionList: SincMatrix,
+        fileParameters: StudyFileParameters
+    ): Boolean {
+        val rowSelector = ((exceptionList.getCol(1) et fileParameters.partID.toDouble()) and
+                (exceptionList.getCol(2) et fileParameters.testTypeInt.toDouble()) and
+                (exceptionList.getCol(3) et fileParameters.testQualifierInt.toDouble()) and
+                (exceptionList.getCol(4) et fileParameters.testNum.toDouble())).find()
+        return !rowSelector.isempty()
+    }
+
+    private val filePattern = mapOf(
+        Pair("SAVS", Regex("S([0-9]+) Test set ([1-3]+) on ([0-9]+) ([a-zA-Z]+) ([0-9]+) ([a-zA-Z]+) ([a-zA-Z]+)")),
+        Pair("NAVSII", Regex("[Ss]ub([0-9]+) Test set ([1-6]+) on ([0-9]+)-([0-9]+)-([0-9]+) ([a-zA-Z]+) ([a-zA-Z]+)"))
+    )
 }
