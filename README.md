@@ -16,7 +16,7 @@ find . -mindepth 2 -type f -print -exec mv {} . \;
 
 ## Change Log
 
-### Version 0.2 <23032022>
+### Version 0.2 <25032022>
 
 + Updated to kotlin to 1.6.10.
 + Updated SincMaths to 0.2.1.
@@ -25,6 +25,7 @@ find . -mindepth 2 -type f -print -exec mv {} . \;
 + Updated Android NDK to 23.0.7599858.
 + Added the improved version of `gsi` algo from MATLAB.
 + Added NAVSII validation data.
++ Updated normative models to stage I and III data.
 
 ### Version 0.1.4 <11092021>
 
