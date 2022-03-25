@@ -16,6 +16,10 @@ find . -mindepth 2 -type f -print -exec mv {} . \;
 
 ## Change Log
 
+### Version 0.2.1 <25032022>
+
++ Fixed the `processorVersion` issue.
+
 ### Version 0.2 <25032022>
 
 + Updated to kotlin to 1.6.10.
