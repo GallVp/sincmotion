@@ -16,6 +16,11 @@ find . -mindepth 2 -type f -print -exec mv {} . \;
 
 ## Change Log
 
+### Version 0.2.2 <13042022>
+
++ Updated Kotlin to 1.6.20.
++ Updated SincMaths to 0.2.2.
+
 ### Version 0.2.1 <25032022>
 
 + Fixed the `processorVersion` issue.
