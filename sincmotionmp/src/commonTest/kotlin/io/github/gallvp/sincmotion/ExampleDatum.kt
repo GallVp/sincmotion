@@ -22,9 +22,11 @@ data class ExampleDatum(
     val isGaitTask: Boolean,
     val referenceOutcomes: Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>,
 ) {
-    fun evaluateOutcomes(testTol: Double) =
+    fun evaluateOutcomes(testTol: Double) {
+        val outcomeDifferences: SincMatrix
+        val testOutcomes: Any
         if (isGaitTask) {
-            val testOutcomes =
+            testOutcomes =
                 estimateGnBGaitOutcomes(
                     timeVector,
                     accelData,
@@ -33,34 +35,35 @@ data class ExampleDatum(
                     fs,
                     personHeight,
                 )
-            val outcomeDifferences =
+            outcomeDifferences =
                 (testOutcomes.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs()
-            assertTrue {
-                val assertValue = outcomeDifferences.lt(testTol).all()
-                if (!assertValue) {
-                    println("Reference outcomes are:\n${referenceOutcomes.second}")
-                    println("Test outcomes are:\n$testOutcomes")
-                    println("Differences are: $outcomeDifferences")
-                }
-                assertValue
-            }
         } else {
-            val testOutcomes =
+            testOutcomes =
                 estimateGnBStaticOutcomes(
                     accelData,
                     rotData,
                     fs,
                 )
-            val outcomeDifferences =
+            outcomeDifferences =
                 (testOutcomes.array.asSincMatrix() - referenceOutcomes.first!!.array.asSincMatrix()).abs()
-            assertTrue {
-                val assertValue = outcomeDifferences.lt(testTol).all()
-                if (!assertValue) {
-                    println("Reference outcomes are:\n${referenceOutcomes.second}")
-                    println("Test outcomes are:\n$testOutcomes")
-                    println("Differences are: $outcomeDifferences")
-                }
-                assertValue
-            }
         }
+
+        assertTrue {
+            val assertValue = outcomeDifferences.lt(testTol).all()
+            if (!assertValue) {
+                println("Reference outcomes are:\n${referenceOutcomes.theOne}")
+                println("Test outcomes are:\n$testOutcomes")
+                println("Differences are: $outcomeDifferences")
+            }
+            assertValue
+        }
+    }
+
+    private val Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>.theOne: Any
+        get() =
+            if (this.first != null) {
+                this.first!!
+            } else {
+                this.second!!
+            }
 }

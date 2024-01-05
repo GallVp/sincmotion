@@ -62,7 +62,7 @@ fun preprocessGnBStaticStream(
     val (truncatedAccelData, truncatedRotData) = truncateGnBStaticStream(accelDataSI, rotData, fs)
 
     // Correct for orientation <X-ML, Y-AP, Z-Verticle>
-    val accelMLxAPxVert = applyGnBFrameCorrection(truncatedAccelData, truncatedRotData)
+    val accelMLxAPxVert = applyGnBFrameCorrection(truncatedAccelData, truncatedRotData, fs)
 
     // Filter Data
     val fsInt = fs.toInt()
@@ -130,14 +130,14 @@ fun estimateGnBGaitOutcomes(
             fs,
             personHeight,
         )
-    }.forEachIndexed { i, cgsOut ->
-        symIndex[i + 1] = cgsOut.symIndex
-        stepLengths[i] = cgsOut.stepLengths
-        leftStepLengths[i] = cgsOut.leftStepLengths
-        rightStepLengths[i] = cgsOut.rightStepLengths
-        stepTimes[i] = cgsOut.stepTimes
-        leftStepTimes[i] = cgsOut.leftStepTimes
-        rightStepTimes[i] = cgsOut.rightStepTimes
+    }.forEachIndexed { i, outcomes ->
+        symIndex[i + 1] = outcomes.symIndex
+        stepLengths[i] = outcomes.stepLengths
+        leftStepLengths[i] = outcomes.leftStepLengths
+        rightStepLengths[i] = outcomes.rightStepLengths
+        stepTimes[i] = outcomes.stepTimes
+        leftStepTimes[i] = outcomes.leftStepTimes
+        rightStepTimes[i] = outcomes.rightStepTimes
     }
 
     val meanSymIndex = symIndex.median().scalar * 100.0
@@ -211,15 +211,16 @@ fun preprocessGnBGaitSegment(
     val accelDataSI = accelData * 9.8
 
     // Correct for orientation <X-ML, Y-AP, Z-Vertical>
-    val accelMLxAPxVert = applyGnBFrameCorrection(accelDataSI, rotData)
+    val accelMLxAPxVert = applyGnBFrameCorrection(accelDataSI, rotData, fs)
 
     // If Android: Remove initial 2 seconds
     return truncateGnBGaitSegment(accelMLxAPxVert, gyroData, fs)
 }
 
 expect fun applyGnBFrameCorrection(
-    accelDataSI: SincMatrix,
+    accelData: SincMatrix,
     rotData: SincMatrix,
+    fs: Double,
 ): SincMatrix
 
 data class GnBPreprocessedGaitSegment(val accelMLxAPxVert: SincMatrix, val gyroData: SincMatrix)

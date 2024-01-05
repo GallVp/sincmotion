@@ -10,10 +10,11 @@ import io.github.gallvp.sincmaths.t
 import io.github.gallvp.sincmaths.times
 
 actual fun applyGnBFrameCorrection(
-    accelDataSI: SincMatrix,
+    accelData: SincMatrix,
     rotData: SincMatrix,
+    fs: Double,
 ): SincMatrix {
-    val accelMLxAPxVert = accelDataSI.copyOf()
+    val accelMLxAPxVert = accelData.copyOf()
     for (i in 1..(accelMLxAPxVert).length) {
         val rotMat = rotData.getRow(i).quat2rotm()
         val correctedSample = rotMat * accelMLxAPxVert.getRow(i).t

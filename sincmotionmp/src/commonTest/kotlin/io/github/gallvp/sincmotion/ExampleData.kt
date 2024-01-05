@@ -2,8 +2,11 @@ package io.github.gallvp.sincmotion
 
 import io.github.gallvp.sincmaths.SincMatrix
 import io.github.gallvp.sincmaths.csvRead
+import io.github.gallvp.sincmaths.get
 import io.github.gallvp.sincmaths.getCol
 import io.github.gallvp.sincmaths.getCols
+import io.github.gallvp.sincmaths.minus
+import io.github.gallvp.sincmaths.plus
 import io.github.gallvp.sincmotion.gaitandbalance.GnBGaitOutcomes
 import io.github.gallvp.sincmotion.gaitandbalance.GnBStaticOutcomes
 
@@ -26,7 +29,7 @@ class ExampleData() {
             )
 
         return ExampleDatum(
-            dataMatrix.getCol(1),
+            (dataMatrix.getCol(1) - dataMatrix[1, 1]) + 1.0 / FS,
             dataMatrix.getCols(intArrayOf(2, 3, 4)),
             dataMatrix.getCols(intArrayOf(5, 6, 7)),
             dataMatrix.getCols(intArrayOf(8, 9, 10, 11)),

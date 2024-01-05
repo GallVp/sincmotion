@@ -12,6 +12,7 @@ import io.github.gallvp.sincmaths.getRow
 import io.github.gallvp.sincmaths.isRow
 import io.github.gallvp.sincmaths.length
 import io.github.gallvp.sincmaths.matrixOf
+import io.github.gallvp.sincmaths.median
 import io.github.gallvp.sincmaths.plus
 import io.github.gallvp.sincmaths.quat2rotm
 import io.github.gallvp.sincmaths.scalar
@@ -23,11 +24,15 @@ import io.github.gallvp.sincmaths.times
 import io.github.gallvp.sincmaths.unaryMinus
 
 actual fun applyGnBFrameCorrection(
-    accelDataSI: SincMatrix,
+    accelData: SincMatrix,
     rotData: SincMatrix,
+    fs: Double,
 ): SincMatrix {
-    val accelMLxAPxVert = accelDataSI.copyOf()
-    val initialToReference = rotData.getRow(1).quat2rotm()
+    val accelMLxAPxVert = accelData.copyOf()
+
+    // Use the quiet period from the initial 1 to 1.5 segment as reference
+    val initialSegment = rotData["$fs+1:(1.5*$fs),:"].median()
+    val initialToReference = initialSegment.quat2rotm()
     val referenceToInitial = initialToReference.t
     val gUser = accelMLxAPxVert.getRow(1)
     val zVector = -gUser

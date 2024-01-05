@@ -40,9 +40,9 @@ actual val ExampleData.referenceOutcomes
             ),
             Pair(
                 GnBStaticOutcomes(
-                    stabilityR = 2.864250298040566,
-                    stabilityML = 3.7210559778054484,
-                    stabilityAP = 3.787752265220489,
+                    stabilityR = 2.874518852089475,
+                    stabilityML = 3.7903004134292195,
+                    stabilityAP = 3.800905800032107,
                 ),
                 null,
             ),
