@@ -1,0 +1,49 @@
+package io.github.gallvp.sincmotion
+
+import io.github.gallvp.sincmotion.gaitandbalance.GnBGaitOutcomes
+import io.github.gallvp.sincmotion.gaitandbalance.GnBStaticOutcomes
+
+actual val ExampleData.exampleNames
+    get() =
+        listOf(
+            "walk_ht_android",
+            "compliant_surface_eyes_open_android",
+        )
+
+actual val ExampleData.exampleParticipantHeight
+    get() =
+        listOf(
+            1.68,
+            1.68,
+        )
+actual val ExampleData.isGaitTask
+    get() =
+        listOf(
+            true,
+            false,
+        )
+actual val ExampleData.referenceOutcomes
+    get() =
+        listOf(
+            Pair(
+                null,
+                GnBGaitOutcomes(
+                    meanSymIndex = 66.2248021220862,
+                    meanStepLength = 0.6968765886622427,
+                    meanStepTime = 0.5300000000000000,
+                    stepLengthVariability = 4.009631939375744,
+                    stepTimeVariability = 4.074739269633336,
+                    stepLengthAsymmetry = 4.786694470630516,
+                    stepTimeAsymmetry = 3.7735849056603805,
+                    meanStepVelocity = 1.3267541834580454,
+                ),
+            ),
+            Pair(
+                GnBStaticOutcomes(
+                    stabilityR = 2.864250298040566,
+                    stabilityML = 3.7210559778054484,
+                    stabilityAP = 3.787752265220489,
+                ),
+                null,
+            ),
+        )

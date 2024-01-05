@@ -1,0 +1,15 @@
+[versions]
+agp = "8.2.1"
+kotlin = "1.9.20"
+espresso-core = "3.5.1"
+sincmaths = "0.3"
+
+[libraries]
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+sincmaths = { module = "io.github.gallvp:sincmathsmp", version.ref = "sincmaths" }
+
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinCocoapods = { id = "org.jetbrains.kotlin.native.cocoapods", version.ref = "kotlin" }
