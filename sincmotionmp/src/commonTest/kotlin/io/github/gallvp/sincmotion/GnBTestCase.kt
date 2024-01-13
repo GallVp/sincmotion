@@ -12,20 +12,22 @@ import io.github.gallvp.sincmotion.gaitandbalance.estimateGnBGaitOutcomes
 import io.github.gallvp.sincmotion.gaitandbalance.estimateGnBStaticOutcomes
 import kotlin.test.assertTrue
 
-data class ExampleDatum(
+data class GnBTestCase(
+    val name: String,
     val timeVector: SincMatrix,
     val accelData: SincMatrix,
     val gyroData: SincMatrix,
     val rotData: SincMatrix,
     val fs: Double,
-    val personHeight: Double,
-    val isGaitTask: Boolean,
+    val personHeight: Double?,
     val referenceOutcomes: Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>,
 ) {
     fun evaluateOutcomes(testTol: Double) {
+        println("Running tests for: $name")
+
         val outcomeDifferences: SincMatrix
         val testOutcomes: Any
-        if (isGaitTask) {
+        if (referenceOutcomes.second != null) {
             testOutcomes =
                 estimateGnBGaitOutcomes(
                     timeVector,
@@ -33,7 +35,7 @@ data class ExampleDatum(
                     rotData,
                     gyroData,
                     fs,
-                    personHeight,
+                    personHeight!!,
                 )
             outcomeDifferences =
                 (testOutcomes.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs()
@@ -57,6 +59,8 @@ data class ExampleDatum(
             }
             assertValue
         }
+
+        println("All tests passed for: $name")
     }
 
     private val Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>.theOne: Any

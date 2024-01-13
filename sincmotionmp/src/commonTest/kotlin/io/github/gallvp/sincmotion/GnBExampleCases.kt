@@ -10,16 +10,14 @@ import io.github.gallvp.sincmaths.plus
 import io.github.gallvp.sincmotion.gaitandbalance.GnBGaitOutcomes
 import io.github.gallvp.sincmotion.gaitandbalance.GnBStaticOutcomes
 
-class ExampleData() {
-    fun evaluateAllExamples(testTol: Double) {
+class GnBExampleCases() {
+    fun evaluateAll(testTol: Double) {
         exampleNames.forEach {
-            println("Running tests for file: $it")
             getExampleByName(it).evaluateOutcomes(testTol)
-            println("All tests passed on file: $it")
         }
     }
 
-    private fun getExampleByName(name: String): ExampleDatum {
+    private fun getExampleByName(name: String): GnBTestCase {
         val filePath = "example_data/gaitandbalance/$name.csv"
         val dataMatrix =
             SincMatrix.csvRead(
@@ -28,14 +26,14 @@ class ExampleData() {
                 headerInfo = listOf("t", "d", "d", "d", "d", "d", "d", "d", "d", "d", "d"),
             )
 
-        return ExampleDatum(
+        return GnBTestCase(
+            name,
             (dataMatrix.getCol(1) - dataMatrix[1, 1]) + 1.0 / FS,
             dataMatrix.getCols(intArrayOf(2, 3, 4)),
             dataMatrix.getCols(intArrayOf(5, 6, 7)),
             dataMatrix.getCols(intArrayOf(8, 9, 10, 11)),
             FS,
             exampleParticipantHeight[exampleNames.indexOf(name)],
-            isGaitTask[exampleNames.indexOf(name)],
             referenceOutcomes[exampleNames.indexOf(name)],
         )
     }
@@ -45,7 +43,6 @@ class ExampleData() {
     }
 }
 
-expect val ExampleData.exampleNames: List<String>
-expect val ExampleData.exampleParticipantHeight: List<Double>
-expect val ExampleData.isGaitTask: List<Boolean>
-expect val ExampleData.referenceOutcomes: List<Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>>
+expect val GnBExampleCases.exampleNames: List<String>
+expect val GnBExampleCases.exampleParticipantHeight: List<Double>
+expect val GnBExampleCases.referenceOutcomes: List<Pair<GnBStaticOutcomes?, GnBGaitOutcomes?>>

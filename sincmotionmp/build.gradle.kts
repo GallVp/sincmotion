@@ -62,16 +62,41 @@ android {
 interface Injected {
     @get:Inject
     val fs: FileSystemOperations
+
+    @get:Inject
+    val eo: ExecOperations
 }
 
 tasks.getByName("iosX64Test") {
 
     val injected = project.objects.newInstance<Injected>()
+    val sourceDir = project.file("src/iosTest/test_res")
+    val destinationDir = project.file("build/bin/iosX64/debugTest")
+    val scriptFile = File.createTempFile("symlinkScript", ".sh")
+
+    scriptFile.writeText(
+        """
+        #!/usr/bin/env bash
+        sourceDir="$sourceDir"
+        destinationDir="$destinationDir"
+
+        # Create symbolic links
+        for file in "$sourceDir"/*; do
+            dest_file="$destinationDir/${'$'}(basename ${'$'}file)"
+            if [[ ! -e "${'$'}dest_file" ]]; then
+                ln -s "${'$'}file" "$destinationDir"
+            else
+                echo "${'$'}file already linked..."
+            fi
+        done
+        """.trimIndent(),
+    )
+
+    scriptFile.setExecutable(true)
 
     doFirst {
-        injected.fs.copy {
-            from("src/iosTest/resources")
-            into("build/bin/iosX64/debugTest")
+        injected.eo.exec {
+            commandLine(scriptFile.absolutePath)
         }
     }
 }

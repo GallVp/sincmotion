@@ -3,26 +3,20 @@ package io.github.gallvp.sincmotion
 import io.github.gallvp.sincmotion.gaitandbalance.GnBGaitOutcomes
 import io.github.gallvp.sincmotion.gaitandbalance.GnBStaticOutcomes
 
-actual val ExampleData.exampleNames
+actual val GnBExampleCases.exampleNames
     get() =
         listOf(
             "walk_hf_ios",
             "firm_surface_eyes_closed_ios",
         )
 
-actual val ExampleData.exampleParticipantHeight
+actual val GnBExampleCases.exampleParticipantHeight
     get() =
         listOf(
             1.64,
             1.64,
         )
-actual val ExampleData.isGaitTask
-    get() =
-        listOf(
-            true,
-            false,
-        )
-actual val ExampleData.referenceOutcomes
+actual val GnBExampleCases.referenceOutcomes
     get() =
         listOf(
             Pair(
