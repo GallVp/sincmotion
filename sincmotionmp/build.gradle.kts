@@ -70,8 +70,8 @@ interface Injected {
 tasks.getByName("iosX64Test") {
 
     val injected = project.objects.newInstance<Injected>()
-    val sourceDir = project.file("src/iosTest/test_res")
-    val destinationDir = project.file("build/bin/iosX64/debugTest")
+    val sourceDir = project.file("validation_data/ios_savs")
+    val destinationDir = project.file("build/bin/iosX64/debugTest/validation_data/ios_savs")
     val scriptFile = File.createTempFile("symlinkScript", ".sh")
 
     scriptFile.writeText(

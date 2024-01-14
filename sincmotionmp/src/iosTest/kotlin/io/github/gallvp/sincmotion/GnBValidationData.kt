@@ -1,12 +1,5 @@
 package io.github.gallvp.sincmotion
 
-import io.github.gallvp.sincmaths.get
-import io.github.gallvp.sincmaths.getCol
-import io.github.gallvp.sincmaths.getCols
-import io.github.gallvp.sincmaths.minus
-import io.github.gallvp.sincmaths.plus
-import io.github.gallvp.sincmotion.gaitandbalance.GnBGaitOutcomes
-import io.github.gallvp.sincmotion.gaitandbalance.GnBStaticOutcomes
 import kotlinx.cinterop.ExperimentalForeignApi
 import platform.Foundation.NSBundle
 import platform.Foundation.NSString
@@ -15,107 +8,24 @@ import platform.Foundation.stringWithContentsOfFile
 import kotlin.math.ln
 import kotlin.math.roundToInt
 
-actual val GnBValidationData.validationCases: Sequence<GnBTestCase>
-    get() =
-        generateSequence {
-            if (!gaitOutcomesCSVRows.hasNext()) {
-                return@generateSequence null
-            }
+actual fun StaticOutcomesCSVRow.createAppFileName() =
+    "S" +
+        "${this.part}".padStart(
+            2, '0',
+        ) + " Test set ${this.test} on ${this.day} ${this.month} ${this.year} " + "${this.task} " + "${this.qualifier}.csv"
 
-            val r = gaitOutcomesCSVRows.next()
+actual fun GaitOutcomesCSVRow.createAppFileName() =
+    "S" +
+        "${this.part}".padStart(
+            2, '0',
+        ) + " Test set ${this.test} on ${this.day} ${this.month} ${this.year} " + "${this.task} " + "${this.qualifier}.csv"
 
-            val appFileName =
-                "S" +
-                    "${r.part}".padStart(
-                        2, '0',
-                    ) + " Test set ${r.test} on ${r.day} ${r.month} ${r.year} " + "${r.task} " + "${r.qualifier}.csv"
-
-            val appData = loadAppDataFile("validation_data/ios_savs/app_data/$appFileName")
-
-            GnBTestCase(
-                appFileName,
-                (appData.getCol(1) - appData[1, 1]) + 1.0 / GnBValidationData.FS,
-                appData.getCols(intArrayOf(2, 3, 4)),
-                appData.getCols(intArrayOf(5, 6, 7)),
-                appData.getCols(intArrayOf(8, 9, 10, 11)),
-                GnBValidationData.FS,
-                r.partHeightMeter,
-                Pair(
-                    null,
-                    GnBGaitOutcomes(
-                        r.meanSymIndex,
-                        r.meanStepLength,
-                        r.meanStepTime,
-                        r.stepLengthVariability,
-                        r.stepTimeVariability,
-                        r.stepLengthAsymmetry,
-                        r.stepTimeAsymmetry,
-                        r.meanStepVelocity,
-                    ),
-                ),
-            )
-        } +
-            generateSequence {
-                if (!staticOutcomesCSVRows.hasNext()) {
-                    return@generateSequence null
-                }
-
-                val r = staticOutcomesCSVRows.next()
-
-                val appFileName =
-                    "S" +
-                        "${r.part}".padStart(
-                            2, '0',
-                        ) + " Test set ${r.test} on ${r.day} ${r.month} ${r.year} " + "${r.task} " + "${r.qualifier}.csv"
-
-                val appData = loadAppDataFile("validation_data/ios_savs/app_data/$appFileName")
-
-                GnBTestCase(
-                    appFileName,
-                    (appData.getCol(1) - appData[1, 1]) + 1.0 / GnBValidationData.FS,
-                    appData.getCols(intArrayOf(2, 3, 4)),
-                    appData.getCols(intArrayOf(5, 6, 7)),
-                    appData.getCols(intArrayOf(8, 9, 10, 11)),
-                    GnBValidationData.FS,
-                    null,
-                    Pair(GnBStaticOutcomes(-ln(r.maaR), -ln(r.maaML), -ln(r.maaAP)), null),
-                )
-            }
-
-actual data class StaticOutcomesCSVRow(
-    val part: Int,
-    val test: Int,
-    val day: Int,
-    val month: String,
-    val year: Int,
-    val task: String,
-    val qualifier: String,
-    val maaR: Double,
-    val maaML: Double,
-    val maaAP: Double,
-)
-
-actual data class GaitOutcomesCSVRow(
-    val part: Int,
-    val partHeightMeter: Double,
-    val test: Int,
-    val day: Int,
-    val month: String,
-    val year: Int,
-    val task: String,
-    val qualifier: String,
-    val meanSymIndex: Double,
-    val meanStepLength: Double,
-    val meanStepTime: Double,
-    val stepLengthVariability: Double,
-    val stepTimeVariability: Double,
-    val stepLengthAsymmetry: Double,
-    val stepTimeAsymmetry: Double,
-    val meanStepVelocity: Double,
-)
+actual val GnBValidationData.Companion.dataPath
+    get() = "ios_savs"
 
 actual fun GnBValidationData.loadStaticOutcomesCSVRows(): List<StaticOutcomesCSVRow> {
-    val outcomesCSV = "validation_data/ios_savs/data_tables/StaticBalanceOutcomes_58c4761.csv"
+    val outcomesCSV =
+        "validation_data/${GnBValidationData.Companion.dataPath}/data_tables" + "/StaticBalanceOutcomes_58c4761.csv"
     val fileData = readFile(outcomesCSV, null)!!
     val allCasesList =
         fileData.trim().split("\n").drop(1).map { r ->
@@ -128,9 +38,9 @@ actual fun GnBValidationData.loadStaticOutcomesCSVRows(): List<StaticOutcomesCSV
                 e[4].toInt(),
                 e[5],
                 e[6],
-                e[15].toDouble(),
-                e[13].toDouble(),
-                e[14].toDouble(),
+                -ln(e[15].toDouble()),
+                -ln(e[13].toDouble()),
+                -ln(e[14].toDouble()),
             )
         }
 
@@ -140,14 +50,16 @@ actual fun GnBValidationData.loadStaticOutcomesCSVRows(): List<StaticOutcomesCSV
 }
 
 actual fun GnBValidationData.loadGaitOutcomesCSVRows(): List<GaitOutcomesCSVRow> {
-    val partCharacteristicsCSV = "validation_data/ios_savs/data_tables/PartCharacteristics.csv"
+    val partCharacteristicsCSV =
+        "validation_data/${GnBValidationData.Companion.dataPath}/data_tables/PartCharacteristics.csv"
     val partCharacteristics =
         readFile(partCharacteristicsCSV, null)!!.trim().split("\n").drop(1).associate { r ->
             val e = r.split(",").map { it.trim() }
             Pair(e[0], e[3].toDouble() / 100.0)
         }
 
-    val outcomesCSV = "validation_data/ios_savs/data_tables/ComfortableGaitOutcomes_58c4761.csv"
+    val outcomesCSV =
+        "validation_data/${GnBValidationData.Companion.dataPath}/data_tables/ComfortableGaitOutcomes_58c4761.csv"
     val outcomesCSVData = readFile(outcomesCSV, null)!!
 
     val allCasesList =

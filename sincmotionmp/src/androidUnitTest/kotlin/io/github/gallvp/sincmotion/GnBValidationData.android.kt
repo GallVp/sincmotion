@@ -1,16 +1,12 @@
 package io.github.gallvp.sincmotion
 
-actual val GnBValidationData.validationCases: Sequence<GnBTestCase>
-    get() = TODO("Not yet implemented")
+actual fun GnBValidationData.loadStaticOutcomesCSVRows(): List<StaticOutcomesCSVRow> = emptyList()
 
-actual class StaticOutcomesCSVRow
+actual fun GnBValidationData.loadGaitOutcomesCSVRows(): List<GaitOutcomesCSVRow> = emptyList()
 
-actual fun GnBValidationData.loadStaticOutcomesCSVRows(): List<StaticOutcomesCSVRow> {
-    TODO("Not yet implemented")
-}
+actual fun StaticOutcomesCSVRow.createAppFileName(): String = ""
 
-actual class GaitOutcomesCSVRow
+actual val GnBValidationData.Companion.dataPath: String
+    get() = ""
 
-actual fun GnBValidationData.loadGaitOutcomesCSVRows(): List<GaitOutcomesCSVRow> {
-    TODO("Not yet implemented")
-}
+actual fun GaitOutcomesCSVRow.createAppFileName(): String = ""
