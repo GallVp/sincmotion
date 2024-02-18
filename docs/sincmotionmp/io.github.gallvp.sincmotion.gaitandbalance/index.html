@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>io.github.gallvp.sincmotion.gaitandbalance</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../index.html">
+                            sincmotionmp
+                    </a>
+            </div>
+            <div class="library-version">
+0.3            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":sincmotionmp:dokkaHtml/androidMain">android</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":sincmotionmp:dokkaHtml/commonMain">common</button>
+                <button class="platform-tag platform-selector common-like" data-active="" data-filter=":sincmotionmp:dokkaHtml/iosMain">ios</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageIds="sincmotionmp::io.github.gallvp.sincmotion.gaitandbalance////PointingToDeclaration//980350144">
+  <div class="breadcrumbs"><a href="../../index.html">sincmotionmp</a><span class="delimiter">/</span><span class="current">io.github.gallvp.sincmotion.gaitandbalance</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1900424255%2FClasslikes%2F-1607465258" anchor-label="GnBGaitOutcomes" id="1900424255%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-gait-outcomes/index.html"><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Outcomes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1900424255%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gn-b-gait-outcomes/index.html">GnBGaitOutcomes</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>meanSymIndex<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>meanStepLength<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>meanStepTime<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stepLengthVariability<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stepTimeVariability<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stepLengthAsymmetry<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stepTimeAsymmetry<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>meanStepVelocity<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1946174240%2FClasslikes%2F-1607465258" anchor-label="GnBGaitSegments" id="-1946174240%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-gait-segments/index.html"><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Segments</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1946174240%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gn-b-gait-segments/index.html">GnBGaitSegments</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accelSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>rotSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gyroSegments<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="992436785%2FClasslikes%2F-1607465258" anchor-label="GnBOutcomeType" id="992436785%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-outcome-type/index.html"><span>Gn</span><wbr></wbr><span>BOutcome</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="992436785%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-gn-b-outcome-type/index.html">GnBOutcomeType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-gn-b-outcome-type/index.html">GnBOutcomeType</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1343673997%2FClasslikes%2F-1607465258" anchor-label="GnBOutcomeViewModel" id="-1343673997%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-outcome-view-model/index.html"><span>Gn</span><wbr></wbr><span>BOutcome</span><wbr></wbr><span>View</span><wbr></wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1343673997%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gn-b-outcome-view-model/index.html">GnBOutcomeViewModel</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>personAgeInYears<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>personMassInKGs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>personHeightInCM<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>task<span class="token operator">: </span><a href="-gn-b-task-type/index.html">GnBTaskType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>outcome<span class="token operator">: </span><a href="-gn-b-outcome-type/index.html">GnBOutcomeType</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1515565350%2FClasslikes%2F-1607465258" anchor-label="GnBPreprocessedGaitSegment" id="-1515565350%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-preprocessed-gait-segment/index.html"><span>Gn</span><wbr></wbr><span>BPreprocessed</span><wbr></wbr><span>Gait</span><wbr></wbr><span><span>Segment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1515565350%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gn-b-preprocessed-gait-segment/index.html">GnBPreprocessedGaitSegment</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>accelMLxAPxVert<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1714906486%2FClasslikes%2F-1607465258" anchor-label="GnBStaticOutcomes" id="1714906486%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-static-outcomes/index.html"><span>Gn</span><wbr></wbr><span>BStatic</span><wbr></wbr><span><span>Outcomes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1714906486%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-gn-b-static-outcomes/index.html">GnBStaticOutcomes</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>stabilityR<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stabilityML<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>stabilityAP<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1043583994%2FClasslikes%2F-1607465258" anchor-label="GnBTaskType" id="-1043583994%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-gn-b-task-type/index.html"><span>Gn</span><wbr></wbr><span>BTask</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1043583994%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-gn-b-task-type/index.html">GnBTaskType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-gn-b-task-type/index.html">GnBTaskType</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="877319411%2FClasslikes%2F980350144" anchor-label="NMCompliantECStability" id="877319411%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-c-stability/index.html"><span>NMCompliant</span><wbr></wbr><span><span>ECStability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="877319411%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability/index.html">NMCompliantECStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability/index.html">NMCompliantECStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability/index.html">NMCompliantECStability</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1067804452%2FClasslikes%2F980350144" anchor-label="NMCompliantECStabilityAP" id="1067804452%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-c-stability-a-p/index.html"><span>NMCompliant</span><wbr></wbr><span>ECStability</span><wbr></wbr><span><span>AP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1067804452%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-a-p/index.html">NMCompliantECStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-a-p/index.html">NMCompliantECStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-a-p/index.html">NMCompliantECStabilityAP</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-401808460%2FClasslikes%2F980350144" anchor-label="NMCompliantECStabilityML" id="-401808460%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-c-stability-m-l/index.html"><span>NMCompliant</span><wbr></wbr><span>ECStability</span><wbr></wbr><span><span>ML</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-401808460%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-m-l/index.html">NMCompliantECStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-m-l/index.html">NMCompliantECStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-c-stability-m-l/index.html">NMCompliantECStabilityML</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="108253695%2FClasslikes%2F980350144" anchor-label="NMCompliantEOStability" id="108253695%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-o-stability/index.html"><span>NMCompliant</span><wbr></wbr><span><span>EOStability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="108253695%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability/index.html">NMCompliantEOStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability/index.html">NMCompliantEOStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability/index.html">NMCompliantEOStability</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="730026288%2FClasslikes%2F980350144" anchor-label="NMCompliantEOStabilityAP" id="730026288%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-o-stability-a-p/index.html"><span>NMCompliant</span><wbr></wbr><span>EOStability</span><wbr></wbr><span><span>AP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="730026288%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-a-p/index.html">NMCompliantEOStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-a-p/index.html">NMCompliantEOStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-a-p/index.html">NMCompliantEOStabilityAP</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-739586624%2FClasslikes%2F980350144" anchor-label="NMCompliantEOStabilityML" id="-739586624%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-compliant-e-o-stability-m-l/index.html"><span>NMCompliant</span><wbr></wbr><span>EOStability</span><wbr></wbr><span><span>ML</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-739586624%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-m-l/index.html">NMCompliantEOStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-m-l/index.html">NMCompliantEOStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-compliant-e-o-stability-m-l/index.html">NMCompliantEOStabilityML</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="387134194%2FClasslikes%2F980350144" anchor-label="NMFirmECStability" id="387134194%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-c-stability/index.html"><span>NMFirm</span><wbr></wbr><span><span>ECStability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="387134194%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability/index.html">NMFirmECStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability/index.html">NMFirmECStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability/index.html">NMFirmECStability</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1848753821%2FClasslikes%2F980350144" anchor-label="NMFirmECStabilityAP" id="-1848753821%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-c-stability-a-p/index.html"><span>NMFirm</span><wbr></wbr><span>ECStability</span><wbr></wbr><span><span>AP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1848753821%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-a-p/index.html">NMFirmECStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-a-p/index.html">NMFirmECStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-a-p/index.html">NMFirmECStabilityAP</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="976600563%2FClasslikes%2F980350144" anchor-label="NMFirmECStabilityML" id="976600563%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-c-stability-m-l/index.html"><span>NMFirm</span><wbr></wbr><span>ECStability</span><wbr></wbr><span><span>ML</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="976600563%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-m-l/index.html">NMFirmECStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-m-l/index.html">NMFirmECStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-c-stability-m-l/index.html">NMFirmECStabilityML</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-381931522%2FClasslikes%2F980350144" anchor-label="NMFirmEOStability" id="-381931522%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-o-stability/index.html"><span>NMFirm</span><wbr></wbr><span><span>EOStability</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-381931522%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability/index.html">NMFirmEOStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability/index.html">NMFirmEOStability</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability/index.html">NMFirmEOStability</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2108435311%2FClasslikes%2F980350144" anchor-label="NMFirmEOStabilityAP" id="2108435311%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-o-stability-a-p/index.html"><span>NMFirm</span><wbr></wbr><span>EOStability</span><wbr></wbr><span><span>AP</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2108435311%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-a-p/index.html">NMFirmEOStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-a-p/index.html">NMFirmEOStabilityAP</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-a-p/index.html">NMFirmEOStabilityAP</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="638822399%2FClasslikes%2F980350144" anchor-label="NMFirmEOStabilityML" id="638822399%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-firm-e-o-stability-m-l/index.html"><span>NMFirm</span><wbr></wbr><span>EOStability</span><wbr></wbr><span><span>ML</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="638822399%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-m-l/index.html">NMFirmEOStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-m-l/index.html">NMFirmEOStabilityML</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-firm-e-o-stability-m-l/index.html">NMFirmEOStabilityML</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-321277669%2FClasslikes%2F980350144" anchor-label="NMWalkHFGaitSymmetry" id="-321277669%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-gait-symmetry/index.html"><span>NMWalk</span><wbr></wbr><span>HFGait</span><wbr></wbr><span><span>Symmetry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-321277669%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-gait-symmetry/index.html">NMWalkHFGaitSymmetry</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-gait-symmetry/index.html">NMWalkHFGaitSymmetry</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-gait-symmetry/index.html">NMWalkHFGaitSymmetry</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-349431414%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepLength" id="-349431414%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-length/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span><span>Length</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-349431414%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length/index.html">NMWalkHFStepLength</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length/index.html">NMWalkHFStepLength</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length/index.html">NMWalkHFStepLength</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1350473500%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepLengthAsym" id="-1350473500%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-length-asym/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span>Length</span><wbr></wbr><span><span>Asym</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1350473500%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-asym/index.html">NMWalkHFStepLengthAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-asym/index.html">NMWalkHFStepLengthAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-asym/index.html">NMWalkHFStepLengthAsym</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="780992273%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepLengthVar" id="780992273%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-length-var/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span>Length</span><wbr></wbr><span><span>Var</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="780992273%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-var/index.html">NMWalkHFStepLengthVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-var/index.html">NMWalkHFStepLengthVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-length-var/index.html">NMWalkHFStepLengthVar</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1501673283%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepTime" id="1501673283%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-time/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1501673283%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time/index.html">NMWalkHFStepTime</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time/index.html">NMWalkHFStepTime</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time/index.html">NMWalkHFStepTime</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1712356835%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepTimeAsym" id="-1712356835%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-time-asym/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Asym</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1712356835%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-asym/index.html">NMWalkHFStepTimeAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-asym/index.html">NMWalkHFStepTimeAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-asym/index.html">NMWalkHFStepTimeAsym</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-339060040%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepTimeVar" id="-339060040%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-time-var/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Var</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-339060040%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-var/index.html">NMWalkHFStepTimeVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-var/index.html">NMWalkHFStepTimeVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-time-var/index.html">NMWalkHFStepTimeVar</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1925220275%2FClasslikes%2F980350144" anchor-label="NMWalkHFStepVelocity" id="1925220275%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-f-step-velocity/index.html"><span>NMWalk</span><wbr></wbr><span>HFStep</span><wbr></wbr><span><span>Velocity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1925220275%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-velocity/index.html">NMWalkHFStepVelocity</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-velocity/index.html">NMWalkHFStepVelocity</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-f-step-velocity/index.html">NMWalkHFStepVelocity</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1063141837%2FClasslikes%2F980350144" anchor-label="NMWalkHTGaitSymmetry" id="1063141837%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-gait-symmetry/index.html"><span>NMWalk</span><wbr></wbr><span>HTGait</span><wbr></wbr><span><span>Symmetry</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1063141837%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-gait-symmetry/index.html">NMWalkHTGaitSymmetry</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-gait-symmetry/index.html">NMWalkHTGaitSymmetry</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-gait-symmetry/index.html">NMWalkHTGaitSymmetry</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1184968380%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepLength" id="1184968380%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-length/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span><span>Length</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1184968380%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length/index.html">NMWalkHTStepLength</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length/index.html">NMWalkHTStepLength</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length/index.html">NMWalkHTStepLength</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1931777302%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepLengthAsym" id="1931777302%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-length-asym/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span>Length</span><wbr></wbr><span><span>Asym</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1931777302%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-asym/index.html">NMWalkHTStepLengthAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-asym/index.html">NMWalkHTStepLengthAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-asym/index.html">NMWalkHTStepLengthAsym</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="748323999%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepLengthVar" id="748323999%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-length-var/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span>Length</span><wbr></wbr><span><span>Var</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="748323999%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-var/index.html">NMWalkHTStepLengthVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-var/index.html">NMWalkHTStepLengthVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-length-var/index.html">NMWalkHTStepLengthVar</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1321307915%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepTime" id="-1321307915%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-time/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span><span>Time</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1321307915%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time/index.html">NMWalkHTStepTime</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time/index.html">NMWalkHTStepTime</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time/index.html">NMWalkHTStepTime</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-327937329%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepTimeAsym" id="-327937329%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-time-asym/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Asym</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-327937329%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-asym/index.html">NMWalkHTStepTimeAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-asym/index.html">NMWalkHTStepTimeAsym</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-asym/index.html">NMWalkHTStepTimeAsym</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-17306682%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepTimeVar" id="-17306682%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-time-var/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span>Time</span><wbr></wbr><span><span>Var</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-17306682%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-var/index.html">NMWalkHTStepTimeVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-var/index.html">NMWalkHTStepTimeVar</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-time-var/index.html">NMWalkHTStepTimeVar</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-985327515%2FClasslikes%2F980350144" anchor-label="NMWalkHTStepVelocity" id="-985327515%2FClasslikes%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-n-m-walk-h-t-step-velocity/index.html"><span>NMWalk</span><wbr></wbr><span>HTStep</span><wbr></wbr><span><span>Velocity</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-985327515%2FClasslikes%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-velocity/index.html">NMWalkHTStepVelocity</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-velocity/index.html">NMWalkHTStepVelocity</a> : <a href="-normative-model/index.html">NormativeModel</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword">object </span><a href="-n-m-walk-h-t-step-velocity/index.html">NMWalkHTStepVelocity</a> : <span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/NormativeModel///PointingToDeclaration/">NormativeModel</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2028411806%2FClasslikes%2F-1607465258" anchor-label="NormativeModel" id="-2028411806%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-normative-model/index.html"><span>Normative</span><wbr></wbr><span><span>Model</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2028411806%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-normative-model/index.html">NormativeModel</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="165340212%2FClasslikes%2F-1607465258" anchor-label="NormativeRangeType" id="165340212%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-normative-range-type/index.html"><span>Normative</span><wbr></wbr><span>Range</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="165340212%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-normative-range-type/index.html">NormativeRangeType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-normative-range-type/index.html">NormativeRangeType</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2108217675%2FClasslikes%2F-1607465258" anchor-label="PersonalisedNormativeBounds" id="2108217675%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-personalised-normative-bounds/index.html"><span>Personalised</span><wbr></wbr><span>Normative</span><wbr></wbr><span><span>Bounds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2108217675%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-personalised-normative-bounds/index.html">PersonalisedNormativeBounds</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>task<span class="token operator">: </span><a href="-gn-b-task-type/index.html">GnBTaskType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>outcome<span class="token operator">: </span><a href="-gn-b-outcome-type/index.html">GnBOutcomeType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeLowerBound<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeLowerBoundAsString<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeUpperBound<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeUpperBoundAsString<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeRange<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>normativeRangeAsString<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mdc<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>mdcAsString<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="772054236%2FClasslikes%2F-1607465258" anchor-label="ReportableOutcome" id="772054236%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-reportable-outcome/index.html"><span>Reportable</span><wbr></wbr><span><span>Outcome</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="772054236%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-reportable-outcome/index.html">ReportableOutcome</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>task<span class="token operator">: </span><a href="-gn-b-task-type/index.html">GnBTaskType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>outcome<span class="token operator">: </span><a href="-gn-b-outcome-type/index.html">GnBOutcomeType</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>reportableValueString<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>reportableRange<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>isRangeHighlighted<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2091005737%2FClasslikes%2F-1607465258" anchor-label="TruncatedGnBStaticStream" id="-2091005737%2FClasslikes%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-truncated-gn-b-static-stream/index.html"><span>Truncated</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BStatic</span><wbr></wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2091005737%2FClasslikes%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="-truncated-gn-b-static-stream/index.html">TruncatedGnBStaticStream</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>truncatedAccelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>truncatedRotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1407761577%2FFunctions%2F980350144" anchor-label="applyGnBFrameCorrection" id="1407761577%2FFunctions%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="apply-gn-b-frame-correction.html"><span>apply</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BFrame</span><wbr></wbr><span><span>Correction</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1407761577%2FFunctions%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="apply-gn-b-frame-correction.html"><span class="token function">applyGnBFrameCorrection</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="apply-gn-b-frame-correction.html"><span class="token function">applyGnBFrameCorrection</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="apply-gn-b-frame-correction.html"><span class="token function">applyGnBFrameCorrection</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-605324531%2FFunctions%2F-1607465258" anchor-label="estimateGnBGaitOutcomes" id="-605324531%2FFunctions%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="estimate-gn-b-gait-outcomes.html"><span>estimate</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Outcomes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-605324531%2FFunctions%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="estimate-gn-b-gait-outcomes.html"><span class="token function">estimateGnBGaitOutcomes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">timeVector<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a><span class="token punctuation">, </span></span><span class="parameter ">personHeight<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-gait-outcomes/index.html">GnBGaitOutcomes</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1831034515%2FFunctions%2F-1607465258" anchor-label="estimateGnBStaticOutcomes" id="-1831034515%2FFunctions%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="estimate-gn-b-static-outcomes.html"><span>estimate</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BStatic</span><wbr></wbr><span><span>Outcomes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1831034515%2FFunctions%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="estimate-gn-b-static-outcomes.html"><span class="token function">estimateGnBStaticOutcomes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-static-outcomes/index.html">GnBStaticOutcomes</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-654395362%2FFunctions%2F236267588" anchor-label="gravityVector2RotMat" id="-654395362%2FFunctions%2F236267588" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="gravity-vector2-rot-mat.html"><span>gravity</span><wbr></wbr><span>Vector2Rot</span><wbr></wbr><span><span>Mat</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-654395362%2FFunctions%2F236267588"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button></div>
+<div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="gravity-vector2-rot-mat.html"><span class="token function">gravityVector2RotMat</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">zVector<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></div><div class="brief "><p class="paragraph">Return user to reference pre-multiplying rotation matrix</p></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="483919964%2FFunctions%2F-1607465258" anchor-label="preprocessGnBGaitSegment" id="483919964%2FFunctions%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="preprocess-gn-b-gait-segment.html"><span>preprocess</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Segment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="483919964%2FFunctions%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="preprocess-gn-b-gait-segment.html"><span class="token function">preprocessGnBGaitSegment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-preprocessed-gait-segment/index.html">GnBPreprocessedGaitSegment</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1396747448%2FFunctions%2F-1607465258" anchor-label="preprocessGnBStaticStream" id="-1396747448%2FFunctions%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="preprocess-gn-b-static-stream.html"><span>preprocess</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BStatic</span><wbr></wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1396747448%2FFunctions%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="preprocess-gn-b-static-stream.html"><span class="token function">preprocessGnBStaticStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="960549559%2FFunctions%2F-1607465258" anchor-label="segmentGnBGaitStream" id="960549559%2FFunctions%2F-1607465258" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="segment-gn-b-gait-stream.html"><span>segment</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="960549559%2FFunctions%2F-1607465258"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="segment-gn-b-gait-stream.html"><span class="token function">segmentGnBGaitStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">timeVector<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-gait-segments/index.html">GnBGaitSegments</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="232191332%2FFunctions%2F980350144" anchor-label="truncateGnBGaitSegment" id="232191332%2FFunctions%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="truncate-gn-b-gait-segment.html"><span>truncate</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BGait</span><wbr></wbr><span><span>Segment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="232191332%2FFunctions%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-gait-segment.html"><span class="token function">truncateGnBGaitSegment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelMLxAPxVert<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-preprocessed-gait-segment/index.html">GnBPreprocessedGaitSegment</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-gait-segment.html"><span class="token function">truncateGnBGaitSegment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelMLxAPxVert<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-gn-b-preprocessed-gait-segment/index.html">GnBPreprocessedGaitSegment</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-gait-segment.html"><span class="token function">truncateGnBGaitSegment</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelMLxAPxVert<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">gyroData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/GnBPreprocessedGaitSegment///PointingToDeclaration/">GnBPreprocessedGaitSegment</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="141175694%2FFunctions%2F980350144" anchor-label="truncateGnBStaticStream" id="141175694%2FFunctions%2F980350144" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain"></a>
+          <div class="table-row" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain,:sincmotionmp:dokkaHtml/androidMain,:sincmotionmp:dokkaHtml/iosMain">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="truncate-gn-b-static-stream.html"><span>truncate</span><wbr></wbr><span>Gn</span><wbr></wbr><span>BStatic</span><wbr></wbr><span><span>Stream</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="141175694%2FFunctions%2F980350144"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted  with-platform-tabs" data-platform-hinted="data-platform-hinted">
+                    <div class="platform-bookmarks-row" data-toggle-list="data-toggle-list"><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/androidMain" data-filterable-set=":sincmotionmp:dokkaHtml/androidMain" data-active="" data-toggle=":sincmotionmp:dokkaHtml/androidMain">android</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/commonMain" data-filterable-set=":sincmotionmp:dokkaHtml/commonMain" data-toggle=":sincmotionmp:dokkaHtml/commonMain">common</button><button class="platform-bookmark" data-filterable-current=":sincmotionmp:dokkaHtml/iosMain" data-filterable-set=":sincmotionmp:dokkaHtml/iosMain" data-toggle=":sincmotionmp:dokkaHtml/iosMain">ios</button></div>
+<div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/androidMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-static-stream.html"><span class="token function">truncateGnBStaticStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-truncated-gn-b-static-stream/index.html">TruncatedGnBStaticStream</a></div></div><div class="content sourceset-dependent-content" data-active="" data-togglable=":sincmotionmp:dokkaHtml/commonMain"><div class="symbol monospace"><span class="token keyword">expect </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-static-stream.html"><span class="token function">truncateGnBStaticStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="-truncated-gn-b-static-stream/index.html">TruncatedGnBStaticStream</a></div></div><div class="content sourceset-dependent-content" data-togglable=":sincmotionmp:dokkaHtml/iosMain"><div class="symbol monospace"><span class="token keyword">actual </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="truncate-gn-b-static-stream.html"><span class="token function">truncateGnBStaticStream</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accelData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">rotData<span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmaths/SincMatrix///PointingToDeclaration/">SincMatrix</span><span class="token punctuation">, </span></span><span class="parameter ">fs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html">Double</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="io.github.gallvp.sincmotion.gaitandbalance/TruncatedGnBStaticStream///PointingToDeclaration/">TruncatedGnBStaticStream</span></div></div>                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
