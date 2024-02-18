@@ -1,20 +1,20 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'sincmotionmp'
-    spec.version                  = '1.0'
-    spec.homepage                 = 'Link to the Shared Module homepage'
+    spec.name                     = 'SincMotion'
+    spec.version                  = '0.3'
+    spec.homepage                 = 'https://github.com/GallVp/sincmotion'
     spec.source                   = { :http=> ''}
-    spec.authors                  = ''
+    spec.authors                  = 'Usman Rashid'
     spec.license                  = ''
-    spec.summary                  = 'Some description for the Shared Module'
-    spec.vendored_frameworks      = 'build/cocoapods/framework/sincmotion.framework'
+    spec.summary                  = 'SincMotion: A Kotlin multi-platform implementation of gait and balance algorithms'
+    spec.vendored_frameworks      = 'build/cocoapods/framework/SincMotion.framework'
     spec.libraries                = 'c++'
-    spec.ios.deployment_target = '16.0'
+    spec.ios.deployment_target = '13.0'
 
 
-    if !Dir.exist?('build/cocoapods/framework/sincmotion.framework') || Dir.empty?('build/cocoapods/framework/sincmotion.framework')
+    if !Dir.exist?('build/cocoapods/framework/SincMotion.framework') || Dir.empty?('build/cocoapods/framework/SincMotion.framework')
         raise "
 
-        Kotlin framework 'sincmotion' doesn't exist yet, so a proper Xcode project can't be generated.
+        Kotlin framework 'SincMotion' doesn't exist yet, so a proper Xcode project can't be generated.
         'pod install' should be executed after running ':generateDummyFramework' Gradle task:
 
             ./gradlew :sincmotionmp:generateDummyFramework
@@ -24,12 +24,12 @@ Pod::Spec.new do |spec|
 
     spec.pod_target_xcconfig = {
         'KOTLIN_PROJECT_PATH' => ':sincmotionmp',
-        'PRODUCT_MODULE_NAME' => 'sincmotion',
+        'PRODUCT_MODULE_NAME' => 'SincMotion',
     }
 
     spec.script_phases = [
         {
-            :name => 'Build sincmotionmp',
+            :name => 'Build SincMotion',
             :execution_position => :before_compile,
             :shell_path => '/bin/sh',
             :script => <<-SCRIPT
@@ -39,7 +39,7 @@ Pod::Spec.new do |spec|
                 fi
                 set -ev
                 REPO_ROOT="$PODS_TARGET_SRCROOT"
-                "$REPO_ROOT/../../../../../../private/var/folders/qr/_zh245016rnbh07fpdkckjsh0000gn/T/wrap5loc/gradlew" -p "$REPO_ROOT" $KOTLIN_PROJECT_PATH:syncFramework \
+                "$REPO_ROOT/../gradlew" -p "$REPO_ROOT" $KOTLIN_PROJECT_PATH:syncFramework \
                     -Pkotlin.native.cocoapods.platform=$PLATFORM_NAME \
                     -Pkotlin.native.cocoapods.archs="$ARCHS" \
                     -Pkotlin.native.cocoapods.configuration="$CONFIGURATION"

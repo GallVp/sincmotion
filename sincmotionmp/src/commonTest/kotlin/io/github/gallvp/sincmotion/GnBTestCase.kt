@@ -38,7 +38,7 @@ data class GnBTestCase(
                     personHeight!!,
                 )
             outcomeDifferences =
-                (testOutcomes.array.asSincMatrix() - referenceOutcomes.second!!.array.asSincMatrix()).abs()
+                (testOutcomes.matrix - referenceOutcomes.second!!.matrix).abs()
         } else {
             testOutcomes =
                 estimateGnBStaticOutcomes(
@@ -47,7 +47,7 @@ data class GnBTestCase(
                     fs,
                 )
             outcomeDifferences =
-                (testOutcomes.array.asSincMatrix() - referenceOutcomes.first!!.array.asSincMatrix()).abs()
+                (testOutcomes.matrix - referenceOutcomes.first!!.matrix).abs()
         }
 
         assertTrue {
@@ -70,4 +70,25 @@ data class GnBTestCase(
             } else {
                 this.second!!
             }
+
+    private val GnBGaitOutcomes.matrix: SincMatrix
+        get() =
+            doubleArrayOf(
+                this.meanSymIndex,
+                this.meanStepLength,
+                this.meanStepTime,
+                this.stepLengthVariability,
+                this.stepTimeVariability,
+                this.stepLengthAsymmetry,
+                this.stepTimeAsymmetry,
+                this.meanStepVelocity,
+            ).asSincMatrix()
+
+    private val GnBStaticOutcomes.matrix: SincMatrix
+        get() =
+            doubleArrayOf(
+                this.stabilityR,
+                this.stabilityML,
+                this.stabilityAP,
+            ).asSincMatrix()
 }

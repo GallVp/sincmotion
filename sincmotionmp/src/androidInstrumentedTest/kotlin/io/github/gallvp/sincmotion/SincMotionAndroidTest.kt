@@ -4,7 +4,7 @@ import org.junit.Test
 
 class SincMotionAndroidTest {
     @Test
-    fun runAllTests() {
-        SincMotionTest().runAllTests()
+    fun evaluateAlgorithms() {
+        SincMotionTest().evaluateAlgorithms()
     }
 }
