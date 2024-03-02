@@ -7,13 +7,17 @@ class SincMotionTest {
     private val validationSkipPercentage: Double = 95.0
 
     @Test
-    fun evaluateAlgorithms() {
+    fun evaluateAlgorithmsWithExampleData() {
         GnBExampleCases().evaluateAll(testTol)
+    }
+
+    @Test
+    fun evaluateAlgorithmsWithValidationData() {
         GnBValidationData(validationSkipPercentage).validate(testTol)
     }
 
     @Test
-    fun evaluateGnBOutcomeViewModel() {
+    fun testGnBOutcomeViewModel() {
         GnBOutcomeViewModelTests().evaluateNormativeModels()
     }
 }
