@@ -4,6 +4,95 @@ import kotlin.math.pow
 import kotlin.math.round
 
 data class GnBOutcomeViewModel(
+    val task: GnBTaskType,
+    val outcome: GnBOutcomeType,
+    val reportableValueString: String,
+    val reportableRange: String,
+    val isRangeHighlighted: Boolean,
+)
+
+data class GnBPersonalisedNormsViewModel(
+    val task: GnBTaskType,
+    val outcome: GnBOutcomeType,
+    val normativeLowerBound: Double,
+    val normativeLowerBoundAsString: String,
+    val normativeUpperBound: Double,
+    val normativeUpperBoundAsString: String,
+    val normativeRange: List<Double>,
+    val normativeRangeAsString: String,
+    val mdc: Double,
+    val mdcAsString: String,
+)
+
+enum class GnBTaskType {
+    FIRM_EO,
+    FIRM_EC,
+    COMPLIANT_EO,
+    COMPLIANT_EC,
+    WALK_HF,
+    WALK_HT,
+}
+
+enum class GnBOutcomeType(
+    val tag: String,
+    val displayName: String,
+    val displayUnits: String,
+    val normativeRangeType: NormativeRangeType,
+) {
+    STABILITY("stb-r", "Stability", "-ln[m/s²]", NormativeRangeType.LOWER),
+    STABILITY_ML("stb-ml", "Stability ML", "-ln[m/s²]", NormativeRangeType.LOWER),
+    STABILITY_AP("stb-ap", "Stability AP", "-ln[m/s²]", NormativeRangeType.LOWER),
+    GAIT_SYMMETRY_INDEX(
+        "sym",
+        "Walking balance",
+        "%",
+        NormativeRangeType.LOWER,
+    ),
+    STEP_LENGTH(
+        "s-len",
+        "Step length",
+        "m",
+        NormativeRangeType.LOWER,
+    ),
+    STEP_TIME(
+        "s-time",
+        "Step time",
+        "s",
+        NormativeRangeType.LOWER,
+    ),
+    STEP_LENGTH_VAR(
+        "slv",
+        "Step length variability",
+        "%",
+        NormativeRangeType.UPPER,
+    ),
+    STEP_TIME_VAR(
+        "stv",
+        "Step time variability",
+        "%",
+        NormativeRangeType.UPPER,
+    ),
+    STEP_LENGTH_ASYMMETRY(
+        "sla",
+        "Step length asymmetry",
+        "%",
+        NormativeRangeType.UPPER,
+    ),
+    STEP_TIME_ASYMMETRY(
+        "sta",
+        "Step time asymmetry",
+        "%",
+        NormativeRangeType.UPPER,
+    ),
+    STEP_VELOCITY(
+        "s-vel",
+        "Walking speed",
+        "m/s",
+        NormativeRangeType.LOWER,
+    ),
+}
+
+data class GnBOutcomeViewModelComposer(
     val personAgeInYears: Double,
     val personMassInKGs: Double,
     val personHeightInCM: Double,
@@ -17,7 +106,7 @@ data class GnBOutcomeViewModel(
         )
     }
 
-    fun makeReportable(outcomeValue: Double): ReportableOutcome {
+    fun makeReportable(outcomeValue: Double): GnBOutcomeViewModel {
         val (reportableValue, reportableValueString) = makeOutcomeValueReportable(outcomeValue)
         val reportableRange = personalisedBounds.normativeRangeAsString
 
@@ -32,7 +121,7 @@ data class GnBOutcomeViewModel(
                 NormativeRangeType.UPPER -> reportableValue > personalisedBounds.normativeUpperBound
             }
 
-        return ReportableOutcome(
+        return GnBOutcomeViewModel(
             task,
             outcome,
             reportableValueString,
@@ -41,7 +130,7 @@ data class GnBOutcomeViewModel(
         )
     }
 
-    val personalisedBounds: PersonalisedNormativeBounds
+    val personalisedBounds: GnBPersonalisedNormsViewModel
         get() {
 
             val bmi = personMassInKGs / (personHeightInCM / 100.0).pow(2)
@@ -101,7 +190,7 @@ data class GnBOutcomeViewModel(
                 valueToPrecision(normativeModel.mdc, normativeModel.significantDigits)
             val mdcAsString = valueToString(normativeModel.mdc, normativeModel.significantDigits)
 
-            return PersonalisedNormativeBounds(
+            return GnBPersonalisedNormsViewModel(
                 this.task,
                 this.outcome,
                 normativeLowerBound,
@@ -292,93 +381,4 @@ data class GnBOutcomeViewModel(
             )
         }
     }
-}
-
-data class PersonalisedNormativeBounds(
-    val task: GnBTaskType,
-    val outcome: GnBOutcomeType,
-    val normativeLowerBound: Double,
-    val normativeLowerBoundAsString: String,
-    val normativeUpperBound: Double,
-    val normativeUpperBoundAsString: String,
-    val normativeRange: List<Double>,
-    val normativeRangeAsString: String,
-    val mdc: Double,
-    val mdcAsString: String,
-)
-
-data class ReportableOutcome(
-    val task: GnBTaskType,
-    val outcome: GnBOutcomeType,
-    val reportableValueString: String,
-    val reportableRange: String,
-    val isRangeHighlighted: Boolean,
-)
-
-enum class GnBTaskType {
-    FIRM_EO,
-    FIRM_EC,
-    COMPLIANT_EO,
-    COMPLIANT_EC,
-    WALK_HF,
-    WALK_HT,
-}
-
-enum class GnBOutcomeType(
-    val tag: String,
-    val displayName: String,
-    val displayUnits: String,
-    val normativeRangeType: NormativeRangeType,
-) {
-    STABILITY("stb-r", "Stability", "-ln[m/s²]", NormativeRangeType.LOWER),
-    STABILITY_ML("stb-ml", "Stability ML", "-ln[m/s²]", NormativeRangeType.LOWER),
-    STABILITY_AP("stb-ap", "Stability AP", "-ln[m/s²]", NormativeRangeType.LOWER),
-    GAIT_SYMMETRY_INDEX(
-        "sym",
-        "Walking balance",
-        "%",
-        NormativeRangeType.LOWER,
-    ),
-    STEP_LENGTH(
-        "s-len",
-        "Step length",
-        "m",
-        NormativeRangeType.LOWER,
-    ),
-    STEP_TIME(
-        "s-time",
-        "Step time",
-        "s",
-        NormativeRangeType.LOWER,
-    ),
-    STEP_LENGTH_VAR(
-        "slv",
-        "Step length variability",
-        "%",
-        NormativeRangeType.UPPER,
-    ),
-    STEP_TIME_VAR(
-        "stv",
-        "Step time variability",
-        "%",
-        NormativeRangeType.UPPER,
-    ),
-    STEP_LENGTH_ASYMMETRY(
-        "sla",
-        "Step length asymmetry",
-        "%",
-        NormativeRangeType.UPPER,
-    ),
-    STEP_TIME_ASYMMETRY(
-        "sta",
-        "Step time asymmetry",
-        "%",
-        NormativeRangeType.UPPER,
-    ),
-    STEP_VELOCITY(
-        "s-vel",
-        "Walking speed",
-        "m/s",
-        NormativeRangeType.LOWER,
-    ),
 }
