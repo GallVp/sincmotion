@@ -1,15 +1,15 @@
 package io.github.gallvp.sincmotion
 
 import io.github.gallvp.sincmotion.gaitandbalance.GnBOutcomeType
-import io.github.gallvp.sincmotion.gaitandbalance.GnBOutcomeViewModelComposer
-import io.github.gallvp.sincmotion.gaitandbalance.GnBPersonalisedNormsViewModel
+import io.github.gallvp.sincmotion.gaitandbalance.GnBPersonNorms
+import io.github.gallvp.sincmotion.gaitandbalance.GnBPersonOutcomeComposer
 import io.github.gallvp.sincmotion.gaitandbalance.GnBTaskType
 import kotlin.test.assertEquals
 
-class GnBViewModelTests {
+class GnBNormativeModelTests {
     fun evaluateNormativeModels() {
         assertEquals(
-            GnBPersonalisedNormsViewModel(
+            GnBPersonNorms(
                 GnBTaskType.WALK_HT,
                 GnBOutcomeType.GAIT_SYMMETRY_INDEX,
                 normativeLowerBound = 63.000000,
@@ -20,6 +20,7 @@ class GnBViewModelTests {
                 normativeRangeAsString = "≥ 63",
                 mdc = 6.000000,
                 mdcAsString = "6",
+                decimalPlaces = 0,
             ),
             getPersonalisedBounds(
                 GnBTaskType.WALK_HT,
@@ -31,7 +32,7 @@ class GnBViewModelTests {
         )
 
         assertEquals(
-            GnBPersonalisedNormsViewModel(
+            GnBPersonNorms(
                 GnBTaskType.WALK_HT, GnBOutcomeType.STEP_LENGTH_VAR,
                 normativeLowerBound = -1.000000,
                 normativeLowerBoundAsString = "-1",
@@ -41,6 +42,7 @@ class GnBViewModelTests {
                 normativeRangeAsString = "≤ 5",
                 mdc = 4.000000,
                 mdcAsString = "4",
+                decimalPlaces = 0,
             ),
             getPersonalisedBounds(
                 GnBTaskType.WALK_HT,
@@ -52,7 +54,7 @@ class GnBViewModelTests {
         )
 
         assertEquals(
-            GnBPersonalisedNormsViewModel(
+            GnBPersonNorms(
                 GnBTaskType.FIRM_EO, GnBOutcomeType.STABILITY_AP,
                 normativeLowerBound = 3.500000,
                 normativeLowerBoundAsString = "3.5",
@@ -62,6 +64,7 @@ class GnBViewModelTests {
                 normativeRangeAsString = "≥ 3.5",
                 mdc = 0.300000,
                 mdcAsString = "0.3",
+                decimalPlaces = 1,
             ),
             getPersonalisedBounds(
                 GnBTaskType.FIRM_EO,
@@ -73,7 +76,7 @@ class GnBViewModelTests {
         )
 
         assertEquals(
-            GnBPersonalisedNormsViewModel(
+            GnBPersonNorms(
                 GnBTaskType.COMPLIANT_EC,
                 GnBOutcomeType.STABILITY_AP,
                 normativeLowerBound = 3.100000,
@@ -84,6 +87,7 @@ class GnBViewModelTests {
                 normativeRangeAsString = "≥ 3.1",
                 mdc = 0.400000,
                 mdcAsString = "0.4",
+                decimalPlaces = 1,
             ),
             getPersonalisedBounds(
                 GnBTaskType.COMPLIANT_EC,
@@ -95,7 +99,7 @@ class GnBViewModelTests {
         )
 
         assertEquals(
-            GnBPersonalisedNormsViewModel(
+            GnBPersonNorms(
                 GnBTaskType.WALK_HF, GnBOutcomeType.STEP_TIME_ASYMMETRY,
                 normativeLowerBound = -2.000000,
                 normativeLowerBoundAsString = "-2",
@@ -105,6 +109,7 @@ class GnBViewModelTests {
                 normativeRangeAsString = "≤ 8",
                 mdc = 5.000000,
                 mdcAsString = "5",
+                decimalPlaces = 0,
             ),
             getPersonalisedBounds(
                 GnBTaskType.WALK_HF,
@@ -122,5 +127,5 @@ class GnBViewModelTests {
         ageInYears: Double,
         massInKGs: Double,
         heightInCM: Double,
-    ) = GnBOutcomeViewModelComposer(ageInYears, massInKGs, heightInCM, task, outcome).personalisedBounds
+    ) = GnBPersonOutcomeComposer(ageInYears, massInKGs, heightInCM, task, outcome).personNorms
 }

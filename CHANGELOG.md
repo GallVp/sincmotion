@@ -1,11 +1,10 @@
 # Change Log
 
-## Version 0.3 <09032024>
+## Version 0.3 <23032024>
 
 + Ported project to Android Studio
 + Significantly restructured the project
 + Added android validation
-+ Added GnBOutcomeViewModel
 
 ## Version 0.2.2 <13042022>
 

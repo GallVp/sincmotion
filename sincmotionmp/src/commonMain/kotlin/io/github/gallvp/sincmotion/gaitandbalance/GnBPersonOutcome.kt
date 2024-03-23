@@ -3,15 +3,27 @@ package io.github.gallvp.sincmotion.gaitandbalance
 import kotlin.math.pow
 import kotlin.math.round
 
-data class GnBOutcomeViewModel(
+/** A data class for a person's [GnBOutcomeType] from a [GnBTaskType]
+ * @property value Outcome value which has been rounded to correct decimal places
+ * @property valueString [value] as [String]
+ * @property normativeRange Normative range representation as [String] such as < 1.5, [1 2], etc.
+ * @property valueIsOutsideNorms true if the outcome value is outside the normative range
+ */
+data class GnBPersonOutcome(
     val task: GnBTaskType,
     val outcome: GnBOutcomeType,
-    val reportableValueString: String,
-    val reportableRange: String,
-    val isRangeHighlighted: Boolean,
+    val value: Double,
+    val valueString: String,
+    val normativeRange: String,
+    val valueIsOutsideNorms: Boolean,
 )
 
-data class GnBPersonalisedNormsViewModel(
+/** A data class representing normative bounds for a person for specific [GnBOutcomeType] and
+ * [GnBTaskType]. Both the [Double] and [String] properties are rounded to correct decimal places
+ * digits.
+ *
+ */
+data class GnBPersonNorms(
     val task: GnBTaskType,
     val outcome: GnBOutcomeType,
     val normativeLowerBound: Double,
@@ -22,15 +34,16 @@ data class GnBPersonalisedNormsViewModel(
     val normativeRangeAsString: String,
     val mdc: Double,
     val mdcAsString: String,
+    val decimalPlaces: Int,
 )
 
-enum class GnBTaskType {
-    FIRM_EO,
-    FIRM_EC,
-    COMPLIANT_EO,
-    COMPLIANT_EC,
-    WALK_HF,
-    WALK_HT,
+enum class GnBTaskType(val outcomeTypes: List<GnBOutcomeType>) {
+    FIRM_EO(GnBOutcomeType.staticOutcomeTypes),
+    FIRM_EC(GnBOutcomeType.staticOutcomeTypes),
+    COMPLIANT_EO(GnBOutcomeType.staticOutcomeTypes),
+    COMPLIANT_EC(GnBOutcomeType.staticOutcomeTypes),
+    WALK_HF(GnBOutcomeType.gaitOutcomeTypes),
+    WALK_HT(GnBOutcomeType.gaitOutcomeTypes),
 }
 
 enum class GnBOutcomeType(
@@ -38,99 +51,157 @@ enum class GnBOutcomeType(
     val displayName: String,
     val displayUnits: String,
     val normativeRangeType: NormativeRangeType,
+    val isGaitOutcome: Boolean,
 ) {
-    STABILITY("stb-r", "Stability", "-ln[m/s²]", NormativeRangeType.LOWER),
-    STABILITY_ML("stb-ml", "Stability ML", "-ln[m/s²]", NormativeRangeType.LOWER),
-    STABILITY_AP("stb-ap", "Stability AP", "-ln[m/s²]", NormativeRangeType.LOWER),
+    STABILITY("stb-r", "Stability", "-ln[m/s²]", NormativeRangeType.LOWER, false),
+    STABILITY_ML("stb-ml", "Stability ML", "-ln[m/s²]", NormativeRangeType.LOWER, false),
+    STABILITY_AP("stb-ap", "Stability AP", "-ln[m/s²]", NormativeRangeType.LOWER, false),
     GAIT_SYMMETRY_INDEX(
         "sym",
         "Walking balance",
         "%",
         NormativeRangeType.LOWER,
+        true,
     ),
     STEP_LENGTH(
         "s-len",
         "Step length",
         "m",
         NormativeRangeType.LOWER,
+        true,
     ),
     STEP_TIME(
         "s-time",
         "Step time",
         "s",
         NormativeRangeType.LOWER,
+        true,
     ),
     STEP_LENGTH_VAR(
         "slv",
         "Step length variability",
         "%",
         NormativeRangeType.UPPER,
+        true,
     ),
     STEP_TIME_VAR(
         "stv",
         "Step time variability",
         "%",
         NormativeRangeType.UPPER,
+        true,
     ),
     STEP_LENGTH_ASYMMETRY(
         "sla",
         "Step length asymmetry",
         "%",
         NormativeRangeType.UPPER,
+        true,
     ),
     STEP_TIME_ASYMMETRY(
         "sta",
         "Step time asymmetry",
         "%",
         NormativeRangeType.UPPER,
+        true,
     ),
     STEP_VELOCITY(
         "s-vel",
         "Walking speed",
         "m/s",
         NormativeRangeType.LOWER,
+        true,
     ),
+    ;
+
+    fun rawValueFromGnBGaitOutcomes(outcomes: GnBGaitOutcomes) =
+        when (this) {
+            STABILITY -> null
+            STABILITY_ML -> null
+            STABILITY_AP -> null
+            GAIT_SYMMETRY_INDEX -> outcomes.meanSymIndex
+            STEP_LENGTH -> outcomes.meanStepLength
+            STEP_TIME -> outcomes.meanStepTime
+            STEP_LENGTH_VAR -> outcomes.stepLengthVariability
+            STEP_TIME_VAR -> outcomes.stepTimeVariability
+            STEP_LENGTH_ASYMMETRY -> outcomes.stepLengthAsymmetry
+            STEP_TIME_ASYMMETRY -> outcomes.stepTimeAsymmetry
+            STEP_VELOCITY -> outcomes.meanStepVelocity
+        }
+
+    fun rawValueFromGnBStaticOutcomes(outcomes: GnBStaticOutcomes) =
+        when (this) {
+            STABILITY -> outcomes.stabilityR
+            STABILITY_ML -> outcomes.stabilityML
+            STABILITY_AP -> outcomes.stabilityAP
+            GAIT_SYMMETRY_INDEX -> null
+            STEP_LENGTH -> null
+            STEP_TIME -> null
+            STEP_LENGTH_VAR -> null
+            STEP_TIME_VAR -> null
+            STEP_LENGTH_ASYMMETRY -> null
+            STEP_TIME_ASYMMETRY -> null
+            STEP_VELOCITY -> null
+        }
+
+    fun rawValueFrom(
+        static: GnBStaticOutcomes?,
+        gait: GnBGaitOutcomes?,
+    ) = if (static != null) {
+        rawValueFromGnBStaticOutcomes(static)
+    } else {
+        gait?.let { rawValueFromGnBGaitOutcomes(it) }
+    }
+
+    companion object {
+        val gaitOutcomeTypes: List<GnBOutcomeType> = GnBOutcomeType.entries.filter { it.isGaitOutcome }
+        val staticOutcomeTypes: List<GnBOutcomeType> = GnBOutcomeType.entries.filter { !it.isGaitOutcome }
+
+        fun csvRowFromGnBGaitOutcomes(outcomes: GnBGaitOutcomes) =
+            entries.map {
+                it.rawValueFromGnBGaitOutcomes(outcomes)
+            }.joinToString(",") { if (it != null) "$it" else "" }
+
+        fun csvRowFromGnBStaticOutcomes(outcomes: GnBStaticOutcomes) =
+            entries.map {
+                it.rawValueFromGnBStaticOutcomes(outcomes)
+            }.joinToString(",") { if (it != null) "$it" else "" }
+    }
 }
 
-data class GnBOutcomeViewModelComposer(
+data class GnBPersonOutcomeComposer(
     val personAgeInYears: Double,
     val personMassInKGs: Double,
     val personHeightInCM: Double,
     val task: GnBTaskType,
     val outcome: GnBOutcomeType,
 ) {
-    fun makeOutcomeValueReportable(value: Double): Pair<Double, String> {
-        return Pair(
-            valueToPrecision(value, normativeModel.significantDigits),
-            valueToString(value, normativeModel.significantDigits),
-        )
-    }
-
-    fun makeReportable(outcomeValue: Double): GnBOutcomeViewModel {
-        val (reportableValue, reportableValueString) = makeOutcomeValueReportable(outcomeValue)
-        val reportableRange = personalisedBounds.normativeRangeAsString
+    fun compose(rawValue: Double): GnBPersonOutcome {
+        val (roundedValue, roundedValueString) = roundOutcomeValue(rawValue)
+        val reportableRange = personNorms.normativeRangeAsString
 
         val isHighlighted =
             when (outcome.normativeRangeType) {
-                NormativeRangeType.LOWER -> reportableValue < personalisedBounds.normativeLowerBound
+                NormativeRangeType.LOWER -> roundedValue < personNorms.normativeLowerBound
 
                 NormativeRangeType.MIDDLE ->
-                    reportableValue < personalisedBounds.normativeRange[0] ||
-                        reportableValue > personalisedBounds.normativeRange[1]
+                    roundedValue < personNorms.normativeRange[0] ||
+                        roundedValue > personNorms.normativeRange[1]
 
-                NormativeRangeType.UPPER -> reportableValue > personalisedBounds.normativeUpperBound
+                NormativeRangeType.UPPER -> roundedValue > personNorms.normativeUpperBound
             }
 
-        return GnBOutcomeViewModel(
+        return GnBPersonOutcome(
             task,
             outcome,
-            reportableValueString,
+            roundedValue,
+            roundedValueString,
             reportableRange,
             isHighlighted,
         )
     }
 
-    val personalisedBounds: GnBPersonalisedNormsViewModel
+    val personNorms: GnBPersonNorms
         get() {
 
             val bmi = personMassInKGs / (personHeightInCM / 100.0).pow(2)
@@ -144,18 +215,18 @@ data class GnBOutcomeViewModelComposer(
             val normativeLowerBound =
                 valueToPrecision(
                     normativeMean - 1.645 * normativeModel.normativeSD,
-                    normativeModel.significantDigits,
+                    normativeModel.decimalPlaces,
                 )
             val normativeLowerBoundAsString =
-                valueToString(normativeLowerBound, normativeModel.significantDigits)
+                valueToString(normativeLowerBound, normativeModel.decimalPlaces)
 
             val normativeUpperBound =
                 valueToPrecision(
                     normativeMean + 1.645 * normativeModel.normativeSD,
-                    normativeModel.significantDigits,
+                    normativeModel.decimalPlaces,
                 )
             val normativeUpperBoundAsString =
-                valueToString(normativeUpperBound, normativeModel.significantDigits)
+                valueToString(normativeUpperBound, normativeModel.decimalPlaces)
 
             val normativeRange =
                 listOf(
@@ -164,7 +235,7 @@ data class GnBOutcomeViewModelComposer(
                 )
             val normativeRangeWithPrecision =
                 normativeRange.map {
-                    valueToPrecision(it, normativeModel.significantDigits)
+                    valueToPrecision(it, normativeModel.decimalPlaces)
                 }
 
             val normativeRangeAsString =
@@ -174,12 +245,12 @@ data class GnBOutcomeViewModelComposer(
                         "[${
                             valueToString(
                                 normativeRange[0],
-                                normativeModel.significantDigits,
+                                normativeModel.decimalPlaces,
                             )
                         }, ${
                             valueToString(
                                 normativeRange[1],
-                                normativeModel.significantDigits,
+                                normativeModel.decimalPlaces,
                             )
                         }]"
 
@@ -187,10 +258,10 @@ data class GnBOutcomeViewModelComposer(
                 }
 
             val mdcWithPrecision =
-                valueToPrecision(normativeModel.mdc, normativeModel.significantDigits)
-            val mdcAsString = valueToString(normativeModel.mdc, normativeModel.significantDigits)
+                valueToPrecision(normativeModel.mdc, normativeModel.decimalPlaces)
+            val mdcAsString = valueToString(normativeModel.mdc, normativeModel.decimalPlaces)
 
-            return GnBPersonalisedNormsViewModel(
+            return GnBPersonNorms(
                 this.task,
                 this.outcome,
                 normativeLowerBound,
@@ -201,10 +272,11 @@ data class GnBOutcomeViewModelComposer(
                 normativeRangeAsString,
                 mdcWithPrecision,
                 mdcAsString,
+                normativeModel.decimalPlaces,
             )
         }
 
-    val normativeModel: NormativeModel
+    private val normativeModel: NormativeModel
         get() {
             val model = normativeModels[this.task]?.get(this.outcome)
 
@@ -212,6 +284,13 @@ data class GnBOutcomeViewModelComposer(
 
             return model
         }
+
+    private fun roundOutcomeValue(value: Double): Pair<Double, String> {
+        return Pair(
+            valueToPrecision(value, normativeModel.decimalPlaces),
+            valueToString(value, normativeModel.decimalPlaces),
+        )
+    }
 
     companion object {
         private fun valueToString(

@@ -18,6 +18,6 @@ class SincMotionTest {
 
     @Test
     fun testGnBOutcomeViewModel() {
-        GnBViewModelTests().evaluateNormativeModels()
+        GnBNormativeModelTests().evaluateNormativeModels()
     }
 }
