@@ -1,6 +1,6 @@
 # Change Log
 
-## Version 0.3 <23032024>
+## Version 0.3 <06042024>
 
 + Ported project to Android Studio
 + Significantly restructured the project
