@@ -8,6 +8,18 @@ SincMotion is a Kotlin Multiplatform implementation of algorithms for gait and b
 
 ## Usage
 
+### Kotlin Project: [MavenCentral](https://central.sonatype.com/artifact/io.github.gallvp/sincmotionmp)
+
+> **Note:** This library does not work with `iosSimulatorArm64` target. Android tests have to be
+> performed on an emulator or a connected device, otherwise, the underlying JAVA JNI libraries
+> fail to load.
+
+Add dependency:
+
+```kotlin
+implementation("io.github.gallvp:sincmotionmp:0.3")
+```
+
 ### Swift Project: [CocoaPods](https://kotlinlang.org/docs/native-cocoapods.html#update-podfile-for-xcode)
 
 Clone this project and add it to your project's Podfile:
