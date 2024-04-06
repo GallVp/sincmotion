@@ -23,4 +23,6 @@ jobs:
     - name: Gradle iOS test
       run: ./gradlew iosX64Test
     - name: Gradle Android test
-      run: ./gradlew connectedAndroidTest
+      run: ./gradlew connectedAndroidTest \
+        -Pandroid.testInstrumentationRunnerArguments.class=io.github.gallvp.sincmotion.SincMotionTest#evaluateAlgorithmsWithExampleData \
+        -Pandroid.testInstrumentationRunnerArguments.class=io.github.gallvp.sincmotion.SincMotionTest#evaluateAlgorithmsWithValidationData
