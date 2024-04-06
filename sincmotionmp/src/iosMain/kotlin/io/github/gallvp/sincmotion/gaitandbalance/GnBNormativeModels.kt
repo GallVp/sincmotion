@@ -12,7 +12,7 @@ actual object NMFirmEOStability : NormativeModel {
     override val sem = 0.0992433686245772
     override val mdc = 0.27508858305356
     override val normativeSD = 0.21969266966197
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMFirmEOStabilityML : NormativeModel {
@@ -27,7 +27,7 @@ actual object NMFirmEOStabilityML : NormativeModel {
     override val sem = 0.106894749770793
     override val mdc = 0.296297129549773
     override val normativeSD = 0.265072663385193
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMFirmEOStabilityAP : NormativeModel {
@@ -42,7 +42,7 @@ actual object NMFirmEOStabilityAP : NormativeModel {
     override val sem = 0.109547119071148
     override val mdc = 0.303649122158263
     override val normativeSD = 0.198454457522352
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMFirmECStability : NormativeModel {
@@ -57,7 +57,7 @@ actual object NMFirmECStability : NormativeModel {
     override val sem = 0.118171375987592
     override val mdc = 0.327554342707649
     override val normativeSD = 0.271928365495563
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMFirmECStabilityML : NormativeModel {
@@ -72,7 +72,7 @@ actual object NMFirmECStabilityML : NormativeModel {
     override val sem = 0.13617044690488
     override val mdc = 0.377445221902281
     override val normativeSD = 0.311210188989036
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMFirmECStabilityAP : NormativeModel {
@@ -87,7 +87,7 @@ actual object NMFirmECStabilityAP : NormativeModel {
     override val sem = 0.133698053872334
     override val mdc = 0.370592098056321
     override val normativeSD = 0.264197714838633
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantEOStability : NormativeModel {
@@ -102,7 +102,7 @@ actual object NMCompliantEOStability : NormativeModel {
     override val sem = 0.123847658985723
     override val mdc = 0.343288196451305
     override val normativeSD = 0.335520421583633
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantEOStabilityML : NormativeModel {
@@ -117,7 +117,7 @@ actual object NMCompliantEOStabilityML : NormativeModel {
     override val sem = 0.119463868501636
     override val mdc = 0.331136949175197
     override val normativeSD = 0.315896730791762
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantEOStabilityAP : NormativeModel {
@@ -132,7 +132,7 @@ actual object NMCompliantEOStabilityAP : NormativeModel {
     override val sem = 0.11046052644393
     override val mdc = 0.306180958223601
     override val normativeSD = 0.227383190309476
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantECStability : NormativeModel {
@@ -147,7 +147,7 @@ actual object NMCompliantECStability : NormativeModel {
     override val sem = 0.178372428793777
     override val mdc = 0.494423147589033
     override val normativeSD = 0.435486990579656
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantECStabilityML : NormativeModel {
@@ -162,7 +162,7 @@ actual object NMCompliantECStabilityML : NormativeModel {
     override val sem = 0.174050127487979
     override val mdc = 0.482442339619482
     override val normativeSD = 0.387502117457749
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMCompliantECStabilityAP : NormativeModel {
@@ -177,7 +177,7 @@ actual object NMCompliantECStabilityAP : NormativeModel {
     override val sem = 0.15096215511273
     override val mdc = 0.418445745244366
     override val normativeSD = 0.312442106822375
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMWalkHFGaitSymmetry : NormativeModel {
@@ -192,7 +192,7 @@ actual object NMWalkHFGaitSymmetry : NormativeModel {
     override val sem = 1.49411856618308
     override val mdc = 4.14148537057552
     override val normativeSD = 3.07897299332687
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHFStepLength : NormativeModel {
@@ -207,7 +207,7 @@ actual object NMWalkHFStepLength : NormativeModel {
     override val sem = 0.0144837740395242
     override val mdc = 0.0401469733748431
     override val normativeSD = 0.0440091799353878
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMWalkHFStepTime : NormativeModel {
@@ -222,7 +222,7 @@ actual object NMWalkHFStepTime : NormativeModel {
     override val sem = 0.0163439114912228
     override val mdc = 0.0453030113345011
     override val normativeSD = 0.0390902711569589
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMWalkHFStepLengthVar : NormativeModel {
@@ -237,7 +237,7 @@ actual object NMWalkHFStepLengthVar : NormativeModel {
     override val sem = 0.916974868132548
     override val mdc = 2.54172465794193
     override val normativeSD = 1.46377027492923
-    override val significantDigits = 1
+    override val decimalPlaces = 1
 }
 
 actual object NMWalkHFStepTimeVar : NormativeModel {
@@ -252,7 +252,7 @@ actual object NMWalkHFStepTimeVar : NormativeModel {
     override val sem = 1.29929597453281
     override val mdc = 3.60146469789329
     override val normativeSD = 1.74477977445597
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHFStepLengthAsym : NormativeModel {
@@ -267,7 +267,7 @@ actual object NMWalkHFStepLengthAsym : NormativeModel {
     override val sem = 1.45280745179681
     override val mdc = 4.02697680362157
     override val normativeSD = 2.92935862610444
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHFStepTimeAsym : NormativeModel {
@@ -282,7 +282,7 @@ actual object NMWalkHFStepTimeAsym : NormativeModel {
     override val sem = 1.95511961252514
     override val mdc = 5.41931507730557
     override val normativeSD = 3.06322307990775
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHFStepVelocity : NormativeModel {
@@ -297,7 +297,7 @@ actual object NMWalkHFStepVelocity : NormativeModel {
     override val sem = 0.0523810140254505
     override val mdc = 0.145192763273469
     override val normativeSD = 0.13915202816476
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMWalkHTGaitSymmetry : NormativeModel {
@@ -312,7 +312,7 @@ actual object NMWalkHTGaitSymmetry : NormativeModel {
     override val sem = 2.33425770656665
     override val mdc = 6.47023225713293
     override val normativeSD = 4.73661423424251
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHTStepLength : NormativeModel {
@@ -327,7 +327,7 @@ actual object NMWalkHTStepLength : NormativeModel {
     override val sem = 0.0151980741397253
     override val mdc = 0.0421269122378885
     override val normativeSD = 0.0502015616998924
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMWalkHTStepTime : NormativeModel {
@@ -342,7 +342,7 @@ actual object NMWalkHTStepTime : NormativeModel {
     override val sem = 0.0181155908802362
     override val mdc = 0.0502138560539356
     override val normativeSD = 0.0553225285390458
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }
 
 actual object NMWalkHTStepLengthVar : NormativeModel {
@@ -357,7 +357,7 @@ actual object NMWalkHTStepLengthVar : NormativeModel {
     override val sem = 1.29817857178138
     override val mdc = 3.5983674154869
     override val normativeSD = 1.80483881836859
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHTStepTimeVar : NormativeModel {
@@ -372,7 +372,7 @@ actual object NMWalkHTStepTimeVar : NormativeModel {
     override val sem = 1.22429476639002
     override val mdc = 3.39357195542348
     override val normativeSD = 1.77210876733836
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHTStepLengthAsym : NormativeModel {
@@ -387,7 +387,7 @@ actual object NMWalkHTStepLengthAsym : NormativeModel {
     override val sem = 1.68314260521611
     override val mdc = 4.66543327542104
     override val normativeSD = 2.80991132236526
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHTStepTimeAsym : NormativeModel {
@@ -402,7 +402,7 @@ actual object NMWalkHTStepTimeAsym : NormativeModel {
     override val sem = 2.19616238021856
     override val mdc = 6.08745154162619
     override val normativeSD = 3.00140353718099
-    override val significantDigits = 0
+    override val decimalPlaces = 0
 }
 
 actual object NMWalkHTStepVelocity : NormativeModel {
@@ -417,5 +417,5 @@ actual object NMWalkHTStepVelocity : NormativeModel {
     override val sem = 0.048794830086425
     override val mdc = 0.135252368544549
     override val normativeSD = 0.151530664333088
-    override val significantDigits = 2
+    override val decimalPlaces = 2
 }

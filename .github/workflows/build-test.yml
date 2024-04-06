@@ -1,0 +1,29 @@
+name: build and test
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+# Cancel if a newer run is started
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gradle:
+    runs-on: self-hosted
+    permissions:
+      contents: read
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    - name: Gradle assemble
+      run: ./gradlew assemble
+    - name: Gradle iOS test
+      run: ./gradlew iosX64Test
+    - name: Gradle Android test
+      run: |
+        ./gradlew connectedAndroidTest \
+          -Pandroid.testInstrumentationRunnerArguments.class=io.github.gallvp.sincmotion.SincMotionTest#evaluateAlgorithmsWithExampleData \
+          -Pandroid.testInstrumentationRunnerArguments.class=io.github.gallvp.sincmotion.SincMotionTest#evaluateAlgorithmsWithValidationData

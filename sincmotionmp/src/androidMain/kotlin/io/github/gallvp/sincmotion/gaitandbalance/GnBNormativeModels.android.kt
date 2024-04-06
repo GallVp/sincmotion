@@ -21,7 +21,7 @@ actual object NMWalkHTStepVelocity : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -46,7 +46,7 @@ actual object NMWalkHTStepLengthAsym : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -71,7 +71,7 @@ actual object NMFirmEOStability : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -96,7 +96,7 @@ actual object NMFirmEOStabilityML : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -121,7 +121,7 @@ actual object NMFirmEOStabilityAP : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -146,7 +146,7 @@ actual object NMWalkHTStepTimeAsym : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -171,7 +171,7 @@ actual object NMWalkHTStepTimeVar : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -196,7 +196,7 @@ actual object NMWalkHTStepLengthVar : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -221,7 +221,7 @@ actual object NMWalkHTStepTime : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -246,7 +246,7 @@ actual object NMWalkHTStepLength : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -271,7 +271,7 @@ actual object NMWalkHTGaitSymmetry : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -296,7 +296,7 @@ actual object NMWalkHFStepVelocity : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -321,7 +321,7 @@ actual object NMWalkHFStepTimeAsym : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -346,7 +346,7 @@ actual object NMWalkHFStepLengthAsym : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -371,7 +371,7 @@ actual object NMWalkHFStepTimeVar : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -396,7 +396,7 @@ actual object NMWalkHFStepLengthVar : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -421,7 +421,7 @@ actual object NMWalkHFStepTime : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -446,7 +446,7 @@ actual object NMWalkHFStepLength : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -471,7 +471,7 @@ actual object NMWalkHFGaitSymmetry : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -496,7 +496,7 @@ actual object NMCompliantECStabilityAP : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -521,7 +521,7 @@ actual object NMCompliantECStabilityML : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -546,7 +546,7 @@ actual object NMCompliantECStability : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -571,7 +571,7 @@ actual object NMCompliantEOStabilityAP : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -596,7 +596,7 @@ actual object NMCompliantEOStabilityML : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -621,7 +621,7 @@ actual object NMCompliantEOStability : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -646,7 +646,7 @@ actual object NMFirmECStabilityAP : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -671,7 +671,7 @@ actual object NMFirmECStabilityML : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }
 
@@ -696,6 +696,6 @@ actual object NMFirmECStability : NormativeModel {
         get() = TODO("Not yet implemented")
     override val normativeSD: Double
         get() = TODO("Not yet implemented")
-    override val significantDigits: Int
+    override val decimalPlaces: Int
         get() = TODO("Not yet implemented")
 }

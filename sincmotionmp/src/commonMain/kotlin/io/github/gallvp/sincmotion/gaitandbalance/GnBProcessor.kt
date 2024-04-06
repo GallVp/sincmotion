@@ -27,6 +27,7 @@ import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.sqrt
 
+@Throws(Exception::class)
 fun estimateGnBStaticOutcomes(
     accelData: SincMatrix,
     rotData: SincMatrix,
@@ -84,6 +85,7 @@ fun preprocessGnBStaticStream(
     return filteredAccelMLxAPxVert
 }
 
+@Throws(Exception::class)
 fun estimateGnBGaitOutcomes(
     timeVector: SincMatrix,
     accelData: SincMatrix,

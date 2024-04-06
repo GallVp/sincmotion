@@ -12,7 +12,7 @@ interface NormativeModel {
     val sem: Double
     val mdc: Double
     val normativeSD: Double
-    val significantDigits: Int
+    val decimalPlaces: Int
 }
 
 enum class NormativeRangeType {
