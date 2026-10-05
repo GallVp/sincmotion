@@ -1,6 +1,7 @@
 package io.github.gallvp.sincmotion.gaitandbalance
 
 import io.github.gallvp.sincmaths.SincMatrix
+import io.github.gallvp.sincmaths.asArray
 import io.github.gallvp.sincmaths.asRowVector
 import io.github.gallvp.sincmaths.cat
 import io.github.gallvp.sincmaths.diff
@@ -102,14 +103,15 @@ fun estimateGnBGaitOutcomes(
             gyroData,
         )
 
-    val symIndex = Double.NaN * SincMatrix.ones(4, 1)
+    val lapCount = accelSegments.size
+    val symIndex = Double.NaN * SincMatrix.ones(lapCount, 1)
 
-    val stepLengths = emptySincMatrices(4)
-    val leftStepLengths = emptySincMatrices(4)
-    val rightStepLengths = emptySincMatrices(4)
-    val stepTimes = emptySincMatrices(4)
-    val leftStepTimes = emptySincMatrices(4)
-    val rightStepTimes = emptySincMatrices(4)
+    val stepLengths = emptySincMatrices(lapCount)
+    val leftStepLengths = emptySincMatrices(lapCount)
+    val rightStepLengths = emptySincMatrices(lapCount)
+    val stepTimes = emptySincMatrices(lapCount)
+    val leftStepTimes = emptySincMatrices(lapCount)
+    val rightStepTimes = emptySincMatrices(lapCount)
 
     accelSegments.indices.map { i ->
 
@@ -233,29 +235,23 @@ fun segmentGnBGaitStream(
     rotData: SincMatrix,
     gyroData: SincMatrix,
 ): GnBGaitSegments {
-    val dataPauseStarts = timeVector.diff().gt(1.0).find()
-    val accelDataSegments =
-        listOf(
-            accelData.getRows(1..dataPauseStarts[1].toInt()),
-            accelData.getRows(dataPauseStarts[1].toInt() + 1..dataPauseStarts[2].toInt()),
-            // +1 to go to first sample of the lap
-            accelData.getRows(dataPauseStarts[2].toInt() + 1..dataPauseStarts[3].toInt()),
-            accelData.getRows(dataPauseStarts[3].toInt() + 1..timeVector.numel),
-        )
-    val rotDataSegments =
-        listOf(
-            rotData.getRows(1..dataPauseStarts[1].toInt()),
-            rotData.getRows(dataPauseStarts[1].toInt() + 1..dataPauseStarts[2].toInt()),
-            rotData.getRows(dataPauseStarts[2].toInt() + 1..dataPauseStarts[3].toInt()),
-            rotData.getRows(dataPauseStarts[3].toInt() + 1..timeVector.numel),
-        )
-    val gyroDataSegments =
-        listOf(
-            gyroData.getRows(1..dataPauseStarts[1].toInt()),
-            gyroData.getRows(dataPauseStarts[1].toInt() + 1..dataPauseStarts[2].toInt()),
-            gyroData.getRows(dataPauseStarts[2].toInt() + 1..dataPauseStarts[3].toInt()),
-            gyroData.getRows(dataPauseStarts[3].toInt() + 1..timeVector.numel),
-        )
+    require(timeVector.numel > 0) { "Gait recording must contain samples" }
+    require(
+        accelData.numRows == timeVector.numel &&
+            rotData.numRows == timeVector.numel &&
+            gyroData.numRows == timeVector.numel,
+    ) { "Gait timestamps and sensor streams must have equal sample counts" }
+
+    // Matrix indices are one-based; a pause index is the final sample of a lap.
+    val lapEnds = timeVector.diff().gt(1.0).find().asArray().map { it.toInt() } + timeVector.numel
+    var lapStart = 1
+    val ranges =
+        lapEnds.map { lapEnd ->
+            (lapStart..lapEnd).also { lapStart = lapEnd + 1 }
+        }
+    val accelDataSegments = ranges.map { accelData.getRows(it) }
+    val rotDataSegments = ranges.map { rotData.getRows(it) }
+    val gyroDataSegments = ranges.map { gyroData.getRows(it) }
 
     return GnBGaitSegments(accelDataSegments, rotDataSegments, gyroDataSegments)
 }
