@@ -192,6 +192,13 @@ publishing {
     }
 }
 
-publishing.publications.configureEach {
-    signing.sign(this)
+// Only sign when publishing to Maven Central, not for Maven Local
+val isPublishingToMavenCentral =
+    gradle.startParameter.taskNames.any {
+        it.contains("ToMavenRepository")
+    }
+if (isPublishingToMavenCentral) {
+    publishing.publications.configureEach {
+        signing.sign(this)
+    }
 }
